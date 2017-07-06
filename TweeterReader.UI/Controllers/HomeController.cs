@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
+using LinqToTwitter;
+using TwitterTyper.Models;
 
 namespace IdentitySample.Controllers
 {
@@ -12,7 +15,8 @@ namespace IdentitySample.Controllers
         [Authorize]
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
+            //TwitterClass someTweets = new TwitterClass();
+            List<Status> tweetList = TwitterClass.GetTwitterFeeds("realDonaldTrump");
 
             return View();
         }

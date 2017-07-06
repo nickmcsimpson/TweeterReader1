@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweeterReader.UI", "TweeterReader.UI\TweeterReader.UI.csproj", "{EFDF44E8-FB5B-40C4-B54A-B033A64F2EB3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{64F23081-C442-47D4-B76A-2CB4AA8E70D8} = {64F23081-C442-47D4-B76A-2CB4AA8E70D8}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweeterReader.Data", "TweeterReader.Data\TweeterReader.Data.csproj", "{64F23081-C442-47D4-B76A-2CB4AA8E70D8}"
 EndProject
