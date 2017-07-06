@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7c84eb804024487f9857a44f5e7fd0fa" Name="Diagram1">
+        <EntityTypeShape EntityType="TweeterTyperModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TweeterTyperModel.AspNetRole" Width="1.5" PointX="8.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TweeterTyperModel.AspNetUserClaim" Width="1.5" PointX="13.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="TweeterTyperModel.AspNetUserLogin" Width="1.5" PointX="13.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TweeterTyperModel.AspNetUser" Width="1.5" PointX="11" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TweeterTyperModel.GCAffiliation" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TweeterTyperModel.GCCrimeReportNote" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TweeterTyperModel.GCCrimeReport" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TweeterTyperModel.GCCrimeReportStatu" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TweeterTyperModel.GCLocation" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TweeterTyperModel.GCPerson" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TweeterTyperModel.GCPersonStatu" Width="1.5" PointX="3.75" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="TweeterTyperModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="TweeterTyperModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="TweeterTyperModel.FK_GCPersons_GCAffiliations" ManuallyRouted="false" />
+        <AssociationConnector Association="TweeterTyperModel.FK_GCCrimeReportNotes_GCCrimeReports" ManuallyRouted="false" />
+        <AssociationConnector Association="TweeterTyperModel.FK_GCCrimeReportNotes_GCPersons" ManuallyRouted="false" />
+        <AssociationConnector Association="TweeterTyperModel.FK_GCCrimeReports_GCCrimeReportStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="TweeterTyperModel.FK_GCCrimeReports_GCLocations" ManuallyRouted="false" />
+        <AssociationConnector Association="TweeterTyperModel.FK_GCCrimeReports_GCPersons" ManuallyRouted="false" />
+        <AssociationConnector Association="TweeterTyperModel.FK_GCCrimeReports_GCPersons1" ManuallyRouted="false" />
+        <AssociationConnector Association="TweeterTyperModel.FK_GCCrimeReports_GCPersons2" ManuallyRouted="false" />
+        <AssociationConnector Association="TweeterTyperModel.FK_GCPersons_GCLocations" ManuallyRouted="false" />
+        <AssociationConnector Association="TweeterTyperModel.FK_GCPersons_GCPersonStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="TweeterTyperModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
