@@ -12,6 +12,8 @@ namespace IdentitySample.Controllers
     {
         public ActionResult Index()
         {
+            //I don't know what to do
+
             return View();
         }
 
