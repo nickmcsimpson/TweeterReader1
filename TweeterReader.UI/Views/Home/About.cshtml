@@ -1,12 +1,156 @@
-﻿@{
-    ViewBag.Title = "About";
+﻿@using LinqToTwitter;
+@{
+    ViewBag.Title = "Home Page";
 }
-<hgroup>
-    <h2>@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
-</hgroup>
-<div class="row-fluid">
-    <div class="span12">
-        <p>Use this area to provide additional information.</p>
+@model Status[]
+
+
+<div class="contain-wrapp paddingbot-clear mobile-wrapp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="intro">
+                    <h4>
+                        Twitter Tweet Typing Analysis
+                    </h4>
+                    <p>
+                        Discover the workload of typing on a QWERTY keyboard, how efficient is it?
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <img src="~/Content/img/Stackify/TwitterIcon.jpg" class="img-circle img-responsive" alt="Image demo 2" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="title-head centered">
+                    <span>Tweets</span>
+                    <h4>Typing analysis</h4>
+                </div>
+            </div>
+        </div>
+        @* Generate Tweets and stats *@
+        @for (int i = 0; i < 5; i++)
+        {
+            <div class="cta-wrapp">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h4>@Model[i].Text</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="testimoni-author">@Model[i].ScreenName</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            //Main Stats
+            <div class="row count" style="    display: inline-block;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="counter-item">
+                        <div class="count-value" data-count="@ViewData["strokes" + i]"><span class="fa fa-keyboard-o"></span><span class="start-count">0</span></div>
+                        <p>Key Strokes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row count" style="    display: inline-block;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="counter-item">
+                        <div class="count-value" data-count="@ViewData["keytravel" + i]"><span class="fa fa-adjust"></span><span class="start-count">0</span></div>
+                        <p>Finger Travel</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row count" style="    display: inline-block;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="counter-item">
+                        <div><span class="fa fa-balance-scale"></span><h2 style="color: #787878;">@ViewData["efficiency" + i]</h2></div>
+                        <p>Distance/Key</p>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+            //Right Hand
+            <div class="row count" style="    display: inline-block;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="counter-item">
+                        <div class="count-value" data-count="@ViewData["rindex" + i]"><span class="fa fa-hand-o-right"></span><span class="start-count">0</span></div>
+                        <p>Right Index</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row count" style="    display: inline-block;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="counter-item">
+                        <div class="count-value" data-count="@ViewData["rmiddle" + i]"><span class="fa fa-hand-o-right"></span><span class="start-count">0</span></div>
+                        <p>Right Middle</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row count" style="    display: inline-block;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="counter-item">
+                        <div class="count-value" data-count="@ViewData["rring" + i]"><span class="fa fa-hand-o-right"></span><span class="start-count">0</span></div>
+                        <p>Right Ring</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row count" style="    display: inline-block;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="counter-item">
+                        <div class="count-value" data-count="@ViewData["rpinkie" + i]"><span class="fa fa-hand-o-right"></span><span class="start-count">0</span></div>
+                        <p>Right Pinkie</p>
+                    </div>
+                </div>
+            </div>
+                    <div></div>
+            //Left Hand
+            <div class="row count" style="    display: inline-block;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="counter-item">
+                        <div class="count-value" data-count="@ViewData["lindex" + i]"><span class="fa fa-hand-o-left"></span><span class="start-count">0</span></div>
+                        <p>Left Index</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row count" style="    display: inline-block;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="counter-item">
+                        <div class="count-value" data-count="@ViewData["lmiddle" + i]"><span class="fa fa-hand-o-left"></span><span class="start-count">0</span></div>
+                        <p>Left Middle</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row count" style="    display: inline-block;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="counter-item">
+                        <div class="count-value" data-count="@ViewData["lring" + i]"><span class="fa fa-hand-o-left"></span><span class="start-count">0</span></div>
+                        <p>Left Ring</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row count" style="    display: inline-block;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="counter-item">
+                        <div class="count-value" data-count="@ViewData["lpinkie" + i]"><span class="fa fa-hand-o-left"></span><span class="start-count">0</span></div>
+                        <p>Left Pinkie</p>
+                    </div>
+                </div>
+            </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+        }
+        </div>
     </div>
-</div>
+        <!-- End contain wrapper -->

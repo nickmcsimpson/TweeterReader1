@@ -62,6 +62,7 @@ CSS structure
 	
 ============================================================== */
 
+
 /*
 Stylesheet
 =========================== */
@@ -72,7 +73,7 @@ Stylesheet
 @import url('animate.css');
 @import url('cubeportfolio.min.css');
 @import url('flexslider.css');
-@import url('carousel3d.css');
+/*@import url('carousel3d.css');*/
 @import url('owl.carousel.css');
 @import url('owl.theme.css');
 @import url('owl.transitions.css');
@@ -980,7 +981,7 @@ Custome grid
 	width:100%;
 	overflow:hidden;
 }
-
+z
 .grider-column-captionWrap,
 .grider-column-captionWrap:hover,
 .grider-column-captionWrap:focus,
@@ -997,7 +998,7 @@ Custome grid
 	font-size:18px;
 	line-height:18px;
 	font-weight:700;
-	padding-top:42%;
+	padding-top:22%;
 	text-decoration:none;
 	text-transform:uppercase;
 	border:10px solid #f2f2f2;

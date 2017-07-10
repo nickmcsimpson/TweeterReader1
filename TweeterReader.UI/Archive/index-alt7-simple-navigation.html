@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="ico/favicon.png">
+
+    <title>Creativica - Multiple creative HTML5 template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+	<!-- RS5.0 Main Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/revolution/settings.css">
+	
+	<!-- RS5.0 Layers and Navigation Styles -->
+	<link rel="stylesheet" type="text/css" href="css/revolution/layers.css">
+	<link rel="stylesheet" type="text/css" href="css/revolution/navigation.css"> 
+	
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Color -->
+    <link id="skin" href="skins/default.css" rel="stylesheet">
+	
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/1.4.2/respond.min.js"></script>
+	  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+ 	<!-- Start preloading -->
+	<div id="loading" class="loading-invisible">
+		<div class="loading-center">
+			<div class="loading-center-absolute">
+				<div class="object" id="object_one"></div>
+				<div class="object" id="object_two"></div>
+				<div class="object" id="object_three"></div>
+				<div class="object" id="object_four"></div>
+				<div class="object" id="object_five"></div>
+				<div class="object" id="object_six"></div>
+				<div class="object" id="object_seven"></div>
+				<div class="object" id="object_eight"></div>
+				<div class="object" id="object_big"></div>
+			</div>
+			<p>Please wait...</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		  document.getElementById("loading").className = "loading-visible";
+		  var hideDiv = function(){document.getElementById("loading").className = "loading-invisible";};
+		  var oldLoad = window.onload;
+		  var newLoad = oldLoad ? function(){hideDiv.call(this);oldLoad.call(this);} : hideDiv;
+		  window.onload = newLoad;
+	</script>
+	<!-- End preloading -->
+
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-default bootsnav">
+        <div class="container">            
+
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#brand"><img src="img/brand/logo-black.png" class="logo" alt=""></a>
+            </div>
+            <!-- End Header Navigation -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse collapse-list" id="navbar-menu">
+                <ul class="nav-list" data-in="fadeInDown" data-out="fadeOutUp">
+					<li>
+						<ul>
+							<li><a href="index-alt4.html">Home</a></li>
+							<li><a href="about.html">About us</a></li>
+							<li><a href="team.html">Meet team</a></li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li><a href="blog-leftsidebar.html">Blog</a></li>
+							<li><a href="portfolio-alt1.html">Portfolio</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <!-- End Navigation -->
+	
+	<!-- Start page heading -->
+	<div class="page-heading no-border">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7">
+					<div class="intro">
+						<h4>
+						Creativica is a clean, modern and responsive bootstrap template, suitable for creative agency 
+						</h4>
+						<p>
+						High-quality design with a minimalist style and lot features
+						</p>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<form>
+						<fieldset class="form-search">
+							<input type="text" class="input-search" placeholder="To search type and hit enter" />
+							<button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End page heading -->
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- START REVOLUTION SLIDER 5.0 -->
+				<div id="slider_container" class="rev_slider_wrapper">
+					<div id="rev-slider" class="rev_slider"  data-version="5.0">
+						<ul> 
+							<li data-transition="slideremovedown"> 
+								<!-- MAIN IMAGE -->
+								<img src="img/slider/slider-bg21.jpg"  alt=""  width="1170" height="830" /> 
+								<!-- LAYER NR. 1 -->
+								<div class="tp-caption rev-box-caption" 
+									id="slide-1-layer-1" 
+									data-x="left" data-hoffset="540" 
+									data-y="top" data-voffset="420" 
+									data-width="['560','560','560','560']"
+									data-height="['auto','auto','auto','auto']"
+									data-transform_idle="o:1;"
+									data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeOut;" 
+									data-transform_out="y:150px;opacity:0;s:1500;e:Power3.easeOut;" 
+									data-start="1500" 
+									data-splitin="none" 
+									data-splitout="none" 
+									data-responsive_offset="on" 
+									style="z-index: 5; white-space: normal;">Web design & art directions <a href="#" class="btn btn-primary btn-icon btn-sm">About us <i class="fa fa-long-arrow-right"></i></a>
+								</div>
+							</li>
+							<li data-transition="slideremovedown"> 
+								<!-- MAIN IMAGE -->
+								<img src="img/slider/slider-bg22.jpg"  alt=""  width="1170" height="830" /> 
+								<!-- LAYER NR. 1 -->
+								<div class="tp-caption rev-box-caption" 
+									id="slide-2-layer-1" 
+									data-x="left" data-hoffset="540" 
+									data-y="top" data-voffset="420" 
+									data-width="['560','560','560','560']"
+									data-height="['auto','auto','auto','auto']"
+									data-transform_idle="o:1;"
+									data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeOut;" 
+									data-transform_out="y:150px;opacity:0;s:1500;e:Power3.easeOut;" 
+									data-start="1500" 
+									data-splitin="none" 
+									data-splitout="none" 
+									data-responsive_offset="on" 
+									style="z-index: 5; white-space: normal;">Free & premium graphic design <a href="#" class="btn btn-primary btn-icon btn-sm">Our portfolio <i class="fa fa-long-arrow-right"></i></a>
+								</div>
+							</li>
+							<li data-transition="slideremovedown"> 
+								<!-- MAIN IMAGE -->
+								<img src="img/slider/slider-bg23.jpg"  alt=""  width="1170" height="830" /> 
+								<!-- LAYER NR. 1 -->
+								<div class="tp-caption rev-box-caption" 
+									id="slide-3-layer-1" 
+									data-x="left" data-hoffset="540" 
+									data-y="top" data-voffset="420" 
+									data-width="['560','560','560','560']"
+									data-height="['auto','auto','auto','auto']"
+									data-transform_idle="o:1;"
+									data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeOut;" 
+									data-transform_out="y:150px;opacity:0;s:1500;e:Power3.easeOut;" 
+									data-start="1500" 
+									data-splitin="none" 
+									data-splitout="none" 
+									data-responsive_offset="on" 
+									style="z-index: 5; white-space: normal;">Web design for inspirations <a href="#" class="btn btn-primary btn-icon btn-sm">Services <i class="fa fa-long-arrow-right"></i></a>
+								</div>
+							</li>
+						</ul>
+					</div><!-- END REVOLUTION SLIDER -->
+				</div>
+				<!-- END OF SLIDER WRAPPER -->
+
+				<!-- Start contain wrapp -->
+				<div class="contain-wrapp">	
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="col-icon absolute-left">
+									<i class="fa fa-laptop"></i>
+									<h5>Responsive</h5>
+									<p>
+									Mollis volumus ne ius. Mei fierent lucilius ne. In oratio exerci democritum vix. Ad pro possim latine laoreet postulant no per.
+									</p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="col-icon absolute-left">
+									<i class="fa fa-magic"></i>
+									<h5>Clean design</h5>
+									<p>
+									Mollis volumus ne ius. Mei fierent lucilius ne. In oratio exerci democritum vix. Ad pro possim latine laoreet postulant no per.
+									</p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="col-icon absolute-left">
+									<i class="fa fa-trophy"></i>
+									<h5>Lot features</h5>
+									<p>
+									Mollis volumus ne ius. Mei fierent lucilius ne. In oratio exerci democritum vix. Ad pro possim latine laoreet postulant no per.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="divider margintop40"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3">
+								<div class="title-head centered">
+									<span>Our gallery</span>
+									<h4>Our project from portfolio</h4>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<!-- Start portfolio filter -->
+								<div id="js-filters-masonry" class="cbp-l-filters-buttonCenter cbp-border-filter">
+									<div data-filter="*" class="cbp-filter-item-active cbp-filter-item">
+										All <div class="cbp-filter-counter"></div>
+									</div>
+									<div data-filter=".identity" class="cbp-filter-item">
+										Identity <div class="cbp-filter-counter"></div>
+									</div>
+									<div data-filter=".web-design" class="cbp-filter-item">
+										Web Design <div class="cbp-filter-counter"></div>
+									</div>
+									<div data-filter=".graphic" class="cbp-filter-item">
+										Graphic <div class="cbp-filter-counter"></div>
+									</div>
+									<div data-filter=".logos" class="cbp-filter-item">
+										Logo <div class="cbp-filter-counter"></div>
+									</div>
+								</div>
+								<!-- End portfolio filter -->
+								
+								<!-- Start portfolio -->
+								<div id="js-grid-masonry" class="cbp">
+									<!-- Start project 1 -->
+									<div class="cbp-item identity">
+										<div class="cbp-caption">
+											<div class="cbp-caption-defaultWrap">
+												<img src="img/gallery/480/img01.jpg" class="img-responsive" alt="">
+											</div>
+											<div class="cbp-caption-activeWrap">
+												<div class="cbp-l-caption-alignLeft">
+													<div class="cbp-l-caption-body">
+														<a href="img/gallery/large/img01.jpg" class="cbp-lightbox cbp-zoom" data-title="Detracto<br>by 99webpage"><i class="fa fa-search"></i></a>
+														<div class="cbp-l-caption-title"><a href="portfolioDetail/project1.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Detracto</a></div>
+														<div class="cbp-l-caption-desc">By 99webpage</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End project 1 -->
+									
+									<!-- Start project 2 -->
+									<div class="cbp-item web-design">
+										<div class="cbp-caption">
+											<div class="cbp-caption-defaultWrap">
+												<img src="img/gallery/480/img02.jpg" class="img-responsive" alt="">
+											</div>
+											<div class="cbp-caption-activeWrap">
+												<div class="cbp-l-caption-alignLeft">
+													<div class="cbp-l-caption-body">
+														<a href="img/gallery/large/img02.jpg" class="cbp-lightbox cbp-zoom" data-title="Reprehendunt<br>by 99webpage"><i class="fa fa-search"></i></a>
+														<div class="cbp-l-caption-title"><a href="portfolioDetail/project2.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Reprehendunt</a></div>
+														<div class="cbp-l-caption-desc">By 99webpage</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End project 2 -->
+									
+									<!-- Start project 3 -->
+									<div class="cbp-item graphic vector">
+										<div class="cbp-caption">
+											<div class="cbp-caption-defaultWrap">
+												<img src="img/gallery/480/img03.jpg" class="img-responsive" alt="">
+											</div>
+											<div class="cbp-caption-activeWrap">
+												<div class="cbp-l-caption-alignLeft">
+													<div class="cbp-l-caption-body">
+														<a href="img/gallery/large/img03.jpg" class="cbp-lightbox cbp-zoom" data-title="Scribentur<br>by 99webpage"><i class="fa fa-search"></i></a>
+														<div class="cbp-l-caption-title"><a href="portfolioDetail/project3.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Scribentur</a></div>
+														<div class="cbp-l-caption-desc">By 99webpage</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End project 3 -->
+									
+									<!-- Start project 4 -->
+									<div class="cbp-item logo">
+										<div class="cbp-caption">
+											<div class="cbp-caption-defaultWrap">
+												<img src="img/gallery/480/img04.jpg" class="img-responsive" alt="">
+											</div>
+											<div class="cbp-caption-activeWrap">
+												<div class="cbp-l-caption-alignLeft">
+													<div class="cbp-l-caption-body">
+														<a href="img/gallery/large/img04.jpg" class="cbp-lightbox cbp-zoom" data-title="Disputation<br>by 99webpage"><i class="fa fa-search"></i></a>
+														<div class="cbp-l-caption-title"><a href="portfolioDetail/project4.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Disputation</a></div>
+														<div class="cbp-l-caption-desc">By 99webpage</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End project 4 -->
+									
+									<!-- Start project 5 -->
+									<div class="cbp-item fonts">
+										<div class="cbp-caption">
+											<div class="cbp-caption-defaultWrap">
+												<img src="img/gallery/480/img05.jpg" class="img-responsive" alt="">
+											</div>
+											<div class="cbp-caption-activeWrap">
+												<div class="cbp-l-caption-alignLeft">
+													<div class="cbp-l-caption-body">
+														<a href="img/gallery/large/img05.jpg" class="cbp-lightbox cbp-zoom" data-title="Nonumy<br>by 99webpage"><i class="fa fa-search"></i></a>
+														<div class="cbp-l-caption-title"><a href="portfolioDetail/project5.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Nonumy</a></div>
+														<div class="cbp-l-caption-desc">By 99webpage</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End project 5 -->
+									
+									<!-- Start project 6 -->
+									<div class="cbp-item graphic">
+										<div class="cbp-caption">
+											<div class="cbp-caption-defaultWrap">
+												<img src="img/gallery/480/img06.jpg" class="img-responsive" alt="">
+											</div>
+											<div class="cbp-caption-activeWrap">
+												<div class="cbp-l-caption-alignLeft">
+													<div class="cbp-l-caption-body">
+														<a href="img/gallery/large/img06.jpg" class="cbp-lightbox cbp-zoom" data-title="Electram<br>by 99webpage"><i class="fa fa-search"></i></a>
+														<div class="cbp-l-caption-title"><a href="portfolioDetail/project6.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Electram</a></div>
+														<div class="cbp-l-caption-desc">By 99webpage</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End project 6 -->
+								</div>
+								<!-- End portfolio -->
+								
+								<!-- Start portfolio load more-->
+								<div id="js-loadMore-masonry-projects" class="cbp-l-loadMore-button">
+									<a href="portfolioDetail/loadMoreMasonry.html" class="cbp-l-loadMore-link" rel="nofollow">
+										<span class="cbp-l-loadMore-defaultText">Load more</span>
+										<span class="cbp-l-loadMore-loadingText">Loading...</span>
+										<span class="cbp-l-loadMore-noMoreLoading">No more works</span>
+									</a>
+								</div>
+								<!-- End portfolio load more-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End contain wrapp -->
+			</div>
+		</div>
+	</div>
+	
+	<!-- Start footer -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2 col-sm-2 col-xs-6">
+					<div class="widget">
+						<ul class="link-list">
+							<li><a href="#">About us</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Meet team</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Help</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-6">
+					<div class="widget">
+						<ul class="link-list">
+							<li><a href="#">Themes</a></li>
+							<li><a href="#">Free resources</a></li>
+							<li><a href="#">Logi design</a></li>
+							<li><a href="#">UI/UX PSD</a></li>
+							<li><a href="#">Graphic</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="widget">
+						<div class="tweet"></div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="widget">
+						<h5>Stay update with us !</h5>
+						<!-- Start Subscribe -->
+						<div class="input-group">
+							<input type="text" class="form-subscribe" placeholder="Enter your email address...">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="button"><span class="fa fa-paper-plane"></span></button>
+							</span>
+						</div>
+						<!-- End Subscribe -->
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="subfooter">
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<p class="copyright">2016 &copy; Copyright <a href="http://99webpage.com/">99webpage.</a> All rights Reserved.</p>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<ul class="social-network">
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+									<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+									<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+									<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End footer -->
+	
+	<!-- Start to top -->  
+    <a href="#" class="scrollToTop">
+        <i class="fa fa-chevron-up"></i>
+    </a>  
+    <!-- End to top -->
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/bootsnav.js"></script>
+	<script src="js/jquery.easing-1.3.min.js"></script>
+	
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+	<!-- REVOLUTION JS FILES -->
+	<script type="text/javascript" src="js/revolution/jquery.themepunch.tools.min.js"></script>
+	<script type="text/javascript" src="js/revolution/jquery.themepunch.revolution.min.js"></script>
+	
+	<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
+	(Load Extensions only on Local File Systems ! 
+	The following part can be removed on Server for On Demand Loading) -->	
+	<script type="text/javascript" src="js/revolution/revolution.extension.actions.min.js"></script>
+	<script type="text/javascript" src="js/revolution/revolution.extension.carousel.min.js"></script>
+	<script type="text/javascript" src="js/revolution/revolution.extension.kenburn.min.js"></script>
+	<script type="text/javascript" src="js/revolution/revolution.extension.layeranimation.min.js"></script>
+	<script type="text/javascript" src="js/revolution/revolution.extension.migration.min.js"></script>
+	<script type="text/javascript" src="js/revolution/revolution.extension.navigation.min.js"></script>
+	<script type="text/javascript" src="js/revolution/revolution.extension.parallax.min.js"></script>
+	<script type="text/javascript" src="js/revolution/revolution.extension.slideanims.min.js"></script>
+	<script type="text/javascript" src="js/revolution/revolution.extension.video.min.js"></script>
+	
+	<!-- CUSTOM REVOLUTION JS FILES -->
+	<script>
+	jQuery(document).ready(function() { 
+		jQuery("#rev-slider").revolution({
+			sliderType:"standard",
+			sliderLayout:"auto",
+			delay:9000,
+			navigation: {
+				keyboardNavigation: "on",
+				keyboard_direction: "horizontal",
+				mouseScrollNavigation: "off",
+				onHoverStop: "off",
+				touch: {
+					touchenabled: "on",
+					swipe_threshold: 75,
+					swipe_min_touches: 1,
+					swipe_direction: "horizontal",
+					drag_block_vertical: false
+				},
+				arrows: {
+					style: "hephaistos",
+					enable: true,
+					hide_onmobile: true,
+					hide_onleave: false,
+					tmp: '',
+					left: {
+						h_align: "right",
+						v_align: "bottom",
+						h_offset: 30,
+						v_offset: 30
+					},
+					right: {
+						h_align: "right",
+						v_align: "bottom",
+						h_offset: 5,
+						v_offset: 30
+					}
+				},
+				bullets: {
+					enable: true,
+					hide_onmobile: true,
+					style: "hephaistos",
+					hide_onleave: false,
+					direction: "vertical",
+					h_align: "left",
+					v_align: "bottom",
+					h_offset: 55,
+					v_offset: 30,
+					space: 5,
+					tmp: ''
+				}
+			}, 
+			disableProgressBar:"on",
+		  gridwidth:1170,
+		  gridheight:830 
+		}); 
+	}); 
+	</script>
+	
+	<!-- Custom form -->
+	<script src="js/form/jcf.js"></script>
+	<script src="js/form/jcf.scrollable.js"></script>
+	<script src="js/form/jcf.select.js"></script>
+	
+	<!-- Custom checkbox and radio -->
+	<script src="js/checkator/fm.checkator.jquery.js"></script>
+	<script src="js/checkator/setting.js"></script>
+	
+    <!-- Custom input file -->
+	<script src="js/custominput/modernizr.js"></script>
+	<script src="js/custominput/custom-file-input.js"></script>
+	
+    <!-- Cube portfolio -->
+	<script src="js/cubeportfolio/jquery.cubeportfolio.min.js"></script>
+	<script src="js/cubeportfolio/masonry.js"></script>
+	
+    <!-- owl carousel -->
+	<script src="js/owlcarousel/owl.carousel.min.js"></script>  
+	<script src="js/owlcarousel/setting.js"></script>
+	
+    <!-- Parallax -->
+	<script src="js/parallax/jquery.parallax-1.1.3.js"></script>
+	<script src="js/parallax/setting.js"></script>
+	
+    <!-- Twitter -->
+	<script src="js/twitter/tweetie.min.js"></script>
+	<script src="js/twitter/ticker.js"></script>
+	<script src="js/twitter/setting.js"></script>
+	
+    <!-- Custom -->
+    <script src="js/custom.js"></script>
+  </body>
+</html>

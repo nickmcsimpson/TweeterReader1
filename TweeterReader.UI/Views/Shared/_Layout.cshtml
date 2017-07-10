@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="read and analyze tweets">
     <meta name="keywords" content="Twitter, Type, test" />
-    @*<link rel="icon" href="~/Baticon.png">*@
+    <link rel="icon" href="~/Content/img/Stackify/favicon.ico">
+    <link rel="icon" type="image/png" href="~/Content/img/Stackify/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="~/Content/img/Stackify/favicon-16x16.png" sizes="16x16" />
     <meta name="author" content="Nicholas McClain-Simpson">
     <title>@ViewBag.Title - Type Test</title>
 
@@ -18,14 +20,14 @@
     <link href="~/Content/style.css" rel="stylesheet">
     <!-- Color -->
     <link id="skin" href="~/Content/green.css" rel="stylesheet">
-    @*@Styles.Render("~/Content/css")*@
+    @*@Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryval")*@
     <script src="https://use.fontawesome.com/403e0908b1.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+    @*<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">*@
 
-    @* This application was made for to demo the functionality of Stackify Retrace *@
+    @* This application was made to demo the functionality of Stackify Retrace *@
 
 </head>
 <body>
@@ -54,66 +56,40 @@
         window.onload = newLoad;
     </script>
     <!-- End preloading -->
+
     <!-- Start Navigation -->
-    <nav class="navbar navbar-sidebar bootsnav">
+    <nav class="navbar navbar-default bootsnav">
         <div class="container">
             <!-- Start Header Navigation -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#brand"><img src="img/brand/logo-black.png" class="logo" alt=""></a>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")"><img style="width: 50%;" src="~/Content/img/Stackify/Stackify_Logo_Green_OnWhite_600.png" class="logo" alt="Stackify Logo"></a>
             </div>
             <!-- End Header Navigation -->
-            <div class="navbar-sidebar-desc">
-                <p>
-                    A small design & technology based out of Bandung, experienced more than a decade
-                </p>
-            </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-menu">
-                <!-- Start Menu -->
-                <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Twitter Typer</a>
-                                <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-
-                                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
-                                    {
-                                        <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
-                                        <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
-                                    }
-                                </ul>
-                                @Html.Partial("_LoginPartial")
+            <div class="collapse navbar-collapse collapse-list" id="navbar-menu">
+                <ul class="nav-list" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li>
+                        <ul>
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Tweet Analysis", "About", "Home")</li>
+                            <li>@Html.ActionLink("Learning", "Contact", "Home")</li>                          
                         </ul>
                     </li>
-                    @*<li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Premium slider</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="index-alt9-clean-revolution-slider.html">Clean revolution</a></li>
-                            </ul>
-                        </li>*@
+                    <li>
+                        
+                        <ul>
+                            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                            {
+                                <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
+                                <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                            }
+                            @Html.Partial("_LoginPartial")                            
+                        </ul>
+                    </li>
                 </ul>
-                </li>
-                <li><a href="contact.html">Contact us</a></li>
-                </ul>
-                <!-- End Menu -->
-                <!-- Start Share -->
-                <div class="share">
-                    <ul>
-                        <li><a href="https://www.facebook.com/Stackify/"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://twitter.com/Stackify"><i class="fa fa-twitter"></i></a></li>
-                    </ul>
-                </div>
-                <!-- End Share -->
-                <div class="copyright">2016 &copy; Copyright <a href="http://99webpage.com/">99webpage.</a> All rights Reserved.</div>
             </div><!-- /.navbar-collapse -->
         </div>
     </nav>
@@ -140,10 +116,9 @@
     <script src="~/Content/js/form/jcf.scrollable.js"></script>
     <script src="~/Content/js/form/jcf.select.js"></script>
 
-    <!-- Custom checkbox and radio -->
+    <!-- Custom checkbox and radio
     <script src="~/Content/js/checkator/fm.checkator.jquery.js"></script>
-    <script src="~/Content/js/checkator/setting.js"></script>
-
+    <script src="~/Content/js/checkator/setting.js"></script> -->
     <!-- Custom input file -->
     <script src="~/Content/js/custominput/modernizr.js"></script>
     <script src="~/Content/js/custominput/custom-file-input.js"></script>
@@ -161,15 +136,14 @@
     <script src="~/Content/js/textillate/jquery.textillate.js"></script>
     <script src="~/Content/js/textillate/setting.js"></script>
 
-    <!-- Twitter -->
+    <!-- Twitter
     <script src="~/Content/js/twitter/tweetie.min.js"></script>
     <script src="~/Content/js/twitter/ticker.js"></script>
-    <script src="~/Content/js/twitter/setting.js"></script>
-
+    <script src="~/Content/js/twitter/setting.js"></script>-->
     <!-- Custom -->
-    <script src="js/custom.js"></script>
+    <script src="~/Content/js/custom.js"></script>
 
-    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jquery")*@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

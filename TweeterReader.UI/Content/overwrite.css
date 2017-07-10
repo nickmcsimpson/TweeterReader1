@@ -68,6 +68,7 @@ a:hover{
 	text-decoration:underline;
 }
 
+
 h1, h2, h3, h4, h5, h6{
 	color:#262c31;
 	margin:0 0 20px 0;
@@ -521,6 +522,20 @@ blockquote.pull-right:before{
 /*
 Navbar
 =========================== */
+/*Altered for Stackify Sidebar*/
+nav.bootsnav.navbar-sidebar {
+    position: fixed;
+    width: 13%;
+    overflow: visible;
+    left: 0;
+    padding: 15px 0 0 0;
+    background: #13FFDA;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+}  
+
 
 /*
 Alert

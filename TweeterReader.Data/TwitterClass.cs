@@ -1,4 +1,5 @@
 ﻿using LinqToTwitter;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,6 +10,11 @@ namespace TwitterTyper.Models
 {
     public class TwitterClass
     {
+
+
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+        //Alternative Logger logger = LogManager.GetLogger("MyClassName");
+
         public string tweets;
 
         //CTOR
@@ -39,6 +45,8 @@ namespace TwitterTyper.Models
                  .SingleOrDefaultAsync();
 
             tweets = searchResponse.ToString();
+
+            logger.Trace("Tweets Captured: " + tweets);
 
             if (searchResponse != null && searchResponse.Statuses != null)
                 searchResponse.Statuses.ForEach(tweet =>
