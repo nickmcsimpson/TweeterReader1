@@ -104,84 +104,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AspNetRole.cs">
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUser.cs">
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUserClaim.cs">
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUserLogin.cs">
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="C__MigrationHistory.cs">
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GCAffiliation.cs">
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GCCrimeReport.cs">
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GCCrimeReportNote.cs">
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GCCrimeReportStatu.cs">
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GCLocation.cs">
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GCPerson.cs">
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GCPersonStatu.cs">
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TweeterTyper.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TweeterTyper.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TweeterTyper.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TweeterTyper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TweeterTyper.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TweeterTyper.edmx</DependentUpon>
-    </Compile>
     <Compile Include="TwitterClass.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="TweeterTyper.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TweeterTyper.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
-    <None Include="TweeterTyper.edmx.diagram">
-      <DependentUpon>TweeterTyper.edmx</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="TweeterTyper.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TweeterTyper.Context.cs</LastGenOutput>
-      <DependentUpon>TweeterTyper.edmx</DependentUpon>
-    </Content>
-    <Content Include="TweeterTyper.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TweeterTyper.edmx</DependentUpon>
-      <LastGenOutput>TweeterTyper.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
