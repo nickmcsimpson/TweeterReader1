@@ -23,7 +23,7 @@ namespace IdentitySample.Controllers
 
             int tweetcount = 0;
             //TwitterClass someTweets = new TwitterClass();
-            List<Status> tweetList = TwitterClass.GetTwitterFeeds("realDonaldTrump");
+            List<Status> tweetList = TwitterClass.GetTwitterFeeds("Stackify");
             foreach (var tweet in tweetList)
             {
                 tweetcount += 1;
