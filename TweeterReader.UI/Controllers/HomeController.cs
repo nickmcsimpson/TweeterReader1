@@ -12,8 +12,6 @@ namespace IdentitySample.Controllers
     {
         public ActionResult Index()
         {
-            //I don't know what to do
-
             return View();
         }
 
@@ -73,8 +71,6 @@ namespace IdentitySample.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

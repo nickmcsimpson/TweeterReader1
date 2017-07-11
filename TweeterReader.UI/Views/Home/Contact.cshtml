@@ -1,20 +1,43 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Info";
 }
-<hgroup>
-    <h2>@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
-</hgroup>
-<div>
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
 
-    <address>
-        <i class="icon-envelope"></i><strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <i class="icon-envelope"></i><strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
-</div>
+
+
+
+@* Show What/How *@
+<div class="custom-tabs" data-effect-in="flipInX">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#tab1" data-toggle="tab">First</a>
+        </li>
+        <li>
+            <a href="#tab2" data-toggle="tab">Second</a>
+        </li>
+        <li>
+            <a href="#tab3" data-toggle="tab">Third</a>
+        </li>
+        <li>
+            <a href="#tab4" data-toggle="tab">Fourth</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab1">
+            <p>[...]</p>
+        </div>
+        <div class="tab-pane fade" id="tab2">
+            <p>[...]</p>
+        </div>
+        <div class="tab-pane fade" id="tab3">
+            <p>[...]</p>
+        </div>
+        <div class="tab-pane fade" id="tab4">
+            <p>[...]</p>
+        </div>
+    </div>
+</div>  
+
+@section scripts{
+}
