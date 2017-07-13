@@ -15,10 +15,13 @@ namespace IdentitySample.Controllers
             return View();
         }
 
-        [Authorize]
+        [Authorize]//could it be authorized pages?No change
         public ActionResult About()
         {
-            Logger logger = LogManager.GetLogger("Twitter Page");
+            StackifyLib.ProfileTracer.SetReportingUrl("Twitter Page");
+            //LogManager.GetLogger("Twitter Page"); -I think this messes something up Changing didn't affect whether the page was profiled by prefix.
+            Logger logger = LogManager.GetCurrentClassLogger(); 
+
             //Declare Html Helper
 
             int tweetcount = 0;

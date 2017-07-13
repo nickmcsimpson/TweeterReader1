@@ -66,8 +66,8 @@ CSS structure
 /*
 Stylesheet
 =========================== */
-@import url('../fonts/poppins/stylesheet.css');
-@import url('../fonts/FontAwesome/font-awesome.css');
+@import url('fonts/poppins/stylesheet.css');
+@import url('fonts/FontAwesome/font-awesome.css');
 @import url('bootsnav.css');
 @import url('overwrite.css');
 @import url('animate.css');

@@ -39,16 +39,17 @@ namespace TweeterReader.ADL
             logger.Debug("#Starting #Analysis of tweet: " + tweet);
 
             char[] char_input = input.ToCharArray();
-
-            AnalyzeInput(char_input);
-
+            var tracer = StackifyLib.ProfileTracer.CreateAsTrackedFunction("Analyze Tweet"); tracer.Exec(() =>
+            {
+                AnalyzeInput(char_input);
+            });
             logger.Debug("#Finished #Analysis of tweet: " + tweet);
         }
 
         private void AnalyzeInput(char[] charInput)
         {
-            var tracer = StackifyLib.ProfileTracer.CreateAsTrackedFunction("Analyze Tweet"); tracer.Exec(() =>
-            {
+            //var tracer = StackifyLib.ProfileTracer.CreateAsTrackedFunction("Analyze Tweet"); tracer.Exec(() =>
+            //{//this didn't work
                 foreach (var letter in charInput)
                 {
                     int _keyRow;
@@ -222,7 +223,7 @@ namespace TweeterReader.ADL
                  //Use letter count for custom metric for 'efficiency' keytravel/keystroke
                 efficiency = (double)keytravel / (double)strokes;
                 StackifyLib.Metrics.SetGauge("Analyze Tweet", "Efficiency (distance/stroke)", efficiency);
-            });
+            //});
         }//endAnalyzeInput
 
         public string EasyResult()
