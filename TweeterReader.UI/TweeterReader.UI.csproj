@@ -265,6 +265,7 @@
     <Content Include="Archive\index-alt6-text-slide.html" />
     <Content Include="Archive\index-alt7-simple-navigation.html" />
     <Content Include="Archive\index-alt8-typer-text.html" />
+    <Content Include="Archive\index.html" />
     <Content Include="Archive\services-alt1.html" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootsnav.css" />
@@ -397,6 +398,7 @@
     <Content Include="Content\img\dummy\img04.jpg" />
     <Content Include="Content\img\dummy\img05.jpg" />
     <Content Include="Content\img\dummy\img06.jpg" />
+    <Content Include="Content\img\Stackify\ErrorsGraph.png" />
     <Content Include="Content\img\face-lg.png" />
     <Content Include="Content\img\face.png" />
     <Content Include="Content\img\gallery\380x360\img01.jpg" />
@@ -599,6 +601,8 @@
     <Content Include="Content\img\Stackify\Prefix_Logo_OnWhite_600.png" />
     <Content Include="Content\img\Stackify\Retrace_Logo_OnWhite_600.png" />
     <Content Include="Content\img\Stackify\Stackify_Logo_Green_OnWhite_600.png" />
+    <Content Include="Content\img\Stackify\_RetraceWeb.jpg" />
+    <Content Include="Content\img\Stackify\_SupportWeb.jpg" />
     <Content Include="Content\img\star-half.png" />
     <Content Include="Content\img\star-off.png" />
     <Content Include="Content\img\star-on.png" />
@@ -861,6 +865,8 @@
     <Content Include="Views\RolesAdmin\Delete.cshtml" />
     <Content Include="Views\RolesAdmin\Create.cshtml" />
     <Content Include="Views\Account\DisplayEmail.cshtml" />
+    <Content Include="Views\Home\Tweets.cshtml" />
+    <Content Include="Views\Home\ThrowErrors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -869,10 +875,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TweeterReader.ADL\TweeterReader.ADL.csproj">
-      <Project>{A605CF94-BC01-45F9-B7D0-8DE2AC0B377E}</Project>
-      <Name>TweeterReader.ADL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TweeterReader.Data\TweeterReader.Data.csproj">
       <Project>{64F23081-C442-47D4-B76A-2CB4AA8E70D8}</Project>
       <Name>TweeterReader.Data</Name>

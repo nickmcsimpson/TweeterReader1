@@ -1,158 +1,221 @@
 ﻿@using LinqToTwitter;
 @{
-    ViewBag.Title = "Tweets";
+    ViewBag.Title = "About";
 }
 @model Status[]
 
+@*  Show how things were setup for each:
+    
+    0Send traffic
+    0Configure monitors
+    0Setup key transactions
+    -Enable logs (multiple log frameworks)
+    -Create some custom metrics
+    0Create a log query and save it, configure a monitor
+    0Setup Error monitors
+    0Create custom Notifications
+    Twitter? Make sure it is making some 3rd party calls that we can track
+    -Logging utilitizing #s.
+    -Utilizing custom profiling and tracked functions
+    Done Identity with login capabilities (set up validation so we can see some validation errors)*@
 
-<div class="contain-wrapp paddingbot-clear mobile-wrapp">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <div class="intro">
-                    <h4>
-                        Twitter Tweet Typing Analysis
-                    </h4>
+@*Get all the docs to link too.
+    X-Enable logs (multiple log frameworks) http://support.stackify.com/hc/en-us/sections/201106055--NET
+    X-Create some custom metrics http://support.stackify.com/hc/en-us/articles/205419705-Custom-Metrics-Overview
+    X-Logging utilitizing #s. Adding Tags Your Log Messages: http://support.stackify.com/hc/en-us/articles/204719839-Logs-Dashboard
+   
+    -Utilizing custom profiling  http://support.stackify.com/hc/en-us/articles/205564809-Configuring-Custom-Profiling-for-NET
+    X-and tracked functions http://support.stackify.com/hc/en-us/articles/215107746-Using-Tracked-Functions
+*@
+
+
+@* Outline what was done to implement each feature, link to docs, code snippets, whatever is needed *@
+<div class="col-md-8 col-md-push-2">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title">
+                    <a data-toggle="collapse" href="#panel1">
+                        Tweet Gathering
+                    </a>
+                </h6>
+            </div>
+            <div id="panel1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <p>-Calling Twitter API Linq2Twitter
+                    -Validated through dev.twitter
+                    -My code to call</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title">
+                    <a data-toggle="collapse" href="#panel2">
+                        Typing Analysis
+                    </a>
+                </h6>
+            </div>
+            <div id="panel2" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>-Take text into 'Analyze Tweet' class
+                    -QWERTY class holds values for each character</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title">
+                    <a data-toggle="collapse" href="#panel3">
+                        Logging
+                    </a>
+                </h6>
+            </div>
+            <div id="panel3" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>-NLog (no code changes to existing logs)
+                    -Stackify direct loggin (examples)
+                    -Nuget Packages
+                    -Support Docs
+                    -Tags and Search</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title">
+                    <a data-toggle="collapse" href="#panel4">
+                        Custom Metrics
+                    </a>
+                </h6>
+            </div>
+            <div id="panel4" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>-Types of Metrics doc
+                    -my custom metrics
+                    -how they show in Retrace
+                    -Overview</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title">
+                    <a data-toggle="collapse" href="#panel5">
+                        Azure Deployment
+                    </a>
+                </h6>
+            </div>
+            <div id="panel5" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>-GitHub Deployment
+                    -Stackify Site extension
+                    -App Settings
+                    -Docs</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title">
+                    <a data-toggle="collapse" href="#panel6">
+                        Tracked Functions and Custom Profiling
+                    </a>
+                </h6>
+            </div>
+            <div id="panel6" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>-Link to new documents/blogs
+                    -My Tracked Function
+                    -Limitations of Tracked Functions
+                    
+                    -Custom Profiling of Methods
+                    -"The process is the same for APM+ for Azure App Services, just be sure to include the ProfileClientConfig.txt file in the \bin folder when you deploy your app."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title">
+                    <a data-toggle="collapse" href="#panel8">
+                        Generating Traffic
+                    </a>
+                </h6>
+            </div>
+            <div id="panel8" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>-APM Data needs traffic
+                    -using selenium or whatever</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title">
+                    <a data-toggle="collapse" href="#panel9">
+                        Collapsible Group Item 1
+                    </a>
+                </h6>
+            </div>
+            <div id="panel9" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>[...] </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title">
+                    <a data-toggle="collapse" href="#panel10">
+                        Collapsible Group Item 1
+                    </a>
+                </h6>
+            </div>
+            <div id="panel10" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>[...] </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title">
+                    <a data-toggle="collapse" href="#panel7">
+                        Other Features
+                    </a>
+                </h6>
+            </div>
+            <div id="panel7" class="panel-collapse collapse">
+                <div class="panel-body">
                     <p>
-                        Discover the workload of typing on a QWERTY keyboard, how efficient is it?
+                        Catch-all for other things done:
+                        -Inside Retrace:
+                        -saved search, log query, monitors etc.
                     </p>
                 </div>
             </div>
-            <div class="col-md-5">
-                <img src="~/Content/img/Stackify/TwitterIcon.jpg" class="img-circle img-responsive" alt="Image demo 2" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="divider"></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="title-head centered">
-                    <span>Tweets</span>
-                    <h4>Typing analysis</h4>
-                </div>
-            </div>
-        </div>
-        @* Generate Tweets and stats *@
-        @for (int i = 0; i < 5; i++)
-        {
-            <div class="cta-wrapp">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <h4>@Model[i].Text</h4>
-                        </div>
-                        <div class="col-md-3">
-                            <span class="testimoni-author">@Model[i].ScreenName</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            //Main Stats
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@ViewData["strokes" + i]"><span class="fa fa-keyboard-o"></span><span class="start-count">0</span></div>
-                        <p>Key Strokes</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@ViewData["keytravel" + i]"><span class="fa fa-adjust"></span><span class="start-count">0</span></div>
-                        <p>Finger Travel</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div><span class="fa fa-balance-scale"></span><h2 style="color: #787878;">@ViewData["efficiency" + i]</h2></div>
-                        <p>Distance/Key</p>
-                    </div>
-                </div>
-            </div>
-            <div></div>
-            //Right Hand
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@ViewData["rindex" + i]"><span class="fa fa-hand-o-right"></span><span class="start-count">0</span></div>
-                        <p>Right Index</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@ViewData["rmiddle" + i]"><span class="fa fa-hand-o-right"></span><span class="start-count">0</span></div>
-                        <p>Right Middle</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@ViewData["rring" + i]"><span class="fa fa-hand-o-right"></span><span class="start-count">0</span></div>
-                        <p>Right Ring</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@ViewData["rpinkie" + i]"><span class="fa fa-hand-o-right"></span><span class="start-count">0</span></div>
-                        <p>Right Pinkie</p>
-                    </div>
-                </div>
-            </div>
-                    <div></div>
-            //Left Hand
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@ViewData["lindex" + i]"><span class="fa fa-hand-o-left"></span><span class="start-count">0</span></div>
-                        <p>Left Index</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@ViewData["lmiddle" + i]"><span class="fa fa-hand-o-left"></span><span class="start-count">0</span></div>
-                        <p>Left Middle</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@ViewData["lring" + i]"><span class="fa fa-hand-o-left"></span><span class="start-count">0</span></div>
-                        <p>Left Ring</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@ViewData["lpinkie" + i]"><span class="fa fa-hand-o-left"></span><span class="start-count">0</span></div>
-                        <p>Left Pinkie</p>
-                    </div>
-                </div>
-            </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="divider"></div>
-                        </div>
-                    </div>
-        }
         </div>
     </div>
-        <!-- End contain wrapper -->
+</div>@*end of wrap*@
 @section scripts{
 }

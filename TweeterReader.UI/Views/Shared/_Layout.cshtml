@@ -65,7 +65,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="@Url.Action("Index","Home")"><img style="width: 50%;" src="~/Content/img/Stackify/Stackify_Logo_Green_OnWhite_600.png" class="logo" alt="Stackify Logo"></a>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")"><img style="height: 150%;" src="~/Content/img/Stackify/Stackify_Logo_Green_OnWhite_600.png" class="logo" alt="Stackify Logo"></a>
             </div>
             <!-- End Header Navigation -->
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,18 +74,19 @@
                     <li>
                         <ul>
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Tweet Analysis", "About", "Home")</li>
-                            <li>@Html.ActionLink("Learning", "Contact", "Home")</li>                          
+                            <li>@Html.ActionLink("About", "About", "Home")</li>                            
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>                          
                         </ul>
                     </li>
                     <li>
                         
-                        <ul>
+                        <ul>                            
                             @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                             {
                                 <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
                                 <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
                             }
+                            <li>@Html.ActionLink("Tweet Analysis", "Tweets", "Home")</li>
                             @Html.Partial("_LoginPartial")                            
                         </ul>
                     </li>
@@ -93,13 +94,46 @@
             </div><!-- /.navbar-collapse -->
         </div>
     </nav>
+    <div></div>
     <!-- End Navigation -->
-    @RenderBody()
+        @RenderBody()
     <!-- Start to top -->
     <a href="#" class="scrollToTop">
         <i class="fa fa-chevron-up"></i>
     </a>
     <!-- End to top -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="clearfix"></div>
+            <!-- Start footer -->
+            <footer class="white-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <div class="widget">
+                                <ul class="link-list">
+                                    <li><a href="#">Links</a></li>
+                                    <li><a href="#">Another Link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <div class="widget">
+                                <ul class="link-list">
+                                    <li><a href="#">Other Link</a></li>
+                                    <li><a href="#">And Another</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                    </div>
+                </div>
+            </footer>
+            <!-- End footer -->
+        </div>
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

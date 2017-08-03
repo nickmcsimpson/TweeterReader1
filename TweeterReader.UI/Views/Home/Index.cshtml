@@ -1,104 +1,146 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@*  0Send traffic
-    0Configure monitors
-    0Setup key transactions
-    -Enable logs (multiple log frameworks)
-    -Create some custom metrics
-    0Create a log query and save it, configure a monitor
-    0Setup Error monitors
-    0Create custom Notifications
-    Twitter? Make sure it is making some 3rd party calls that we can track
-    -Logging utilitizing #s.
-    -Utilizing custom profiling and tracked functions
-    Done Identity with login capabilities (set up validation so we can see some validation errors)*@
 
-@*Get all the docs to link too.
-    X-Enable logs (multiple log frameworks) http://support.stackify.com/hc/en-us/sections/201106055--NET
-    X-Create some custom metrics http://support.stackify.com/hc/en-us/articles/205419705-Custom-Metrics-Overview
-    X-Logging utilitizing #s. Adding Tags Your Log Messages: http://support.stackify.com/hc/en-us/articles/204719839-Logs-Dashboard
-    -Utilizing custom profiling  http://support.stackify.com/hc/en-us/articles/205564809-Configuring-Custom-Profiling-for-NET
-    X-and tracked functions http://support.stackify.com/hc/en-us/articles/215107746-Using-Tracked-Functions
-*@
 
-<!-- Start contain wrapper -->
-<div class="contain-wrapp paddingbot-clear">
+<!-- Start slider wrapper -->
+<div class="slider-wrapper">
     <div class="container">
-        <div class="row marginbot80">
-            <div class="col-md-4 col-sm-6">
-                <div class="grider-column">
-                    <a href="@Url.Action("https://stackify.com/")" class="grider-column-captionWrap">Stackify.com</a>
-                    <div class="grider-content animated-text">
-                        <h1 class="tlt"><span>Stackify</span> Retrace</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-7 col-sm-6 col-md-offset-1">
-                <div class="grider-column col-push">
-                    <a href="@Url.Action("https://stackify.com/retrace/")" class="grider-column-captionWrap">Retrace</a>
-                    <img src="~/Content/img/Stackify/Retrace_Logo_OnWhite_600.png" class="img-responsive" alt="Retrace logo" />
-                </div>
-            </div>
-        </div>
-        <div class="row marginbot40">
-            <div class="col-md-4 col-sm-6 col-md-offset-1">
-                <div class="grider-column">
-                    <div class="grider-content">
-                        <a href="@Url.Action("https://stackify.com/prefix/")" class="grider-column-captionWrap">Prefix</a>
-                        <img src="~/Content/img/Stackify/Prefix_Logo_OnWhite_600.png" class="img-responsive" alt="Prefix logo" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5 col-sm-6 col-md-offset-1">
-                <div class="grider-column">
-                    <a href="@Url.Action("https://stackify.com/blog/")" class="grider-column-captionWrap">Blog</a>
-                    @*<h2 class="imgbg-fill">Blog</h2>*@
-                </div>
-            </div>
-        </div>
-        <div class="row marginbot80">
-            <div class="col-md-3 col-sm-6 col-md-offset-6">
-                <div class="grider-column margintop60">
-                    <a href="@Url.Action("https://s1.stackify.com/")" class="grider-column-captionWrap">To Retrace</a>
-                    <img src="~/Content/img/Stackify/LoginPage.png" class="img-responsive" alt="S1 Stackify" />
-                </div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="clearfix"></div>
-                <!-- Start footer -->
-                <footer class="white-footer">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-2 col-sm-2 col-xs-6">
-                                <div class="widget">
-                                    <ul class="link-list">
-                                        <li><a href="#">Links</a></li>
-                                        <li><a href="#">Another Link</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-2 col-xs-6">
-                                <div class="widget">
-                                    <ul class="link-list">
-                                        <li><a href="#">Other Link</a></li>
-                                        <li><a href="#">And Another</a></li>                                       
-                                    </ul>
-                                </div>
-                            </div>                            
+                <div class="slider-content">
+                    <div class="flexslider-wrapp">
+                        <!-- Start Images slider -->
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li><img src="~/Content/img/Stackify/_RetraceWeb.jpg" alt="Stackify Website"></li>
+                                <li><img src="~/Content/img/Stackify/_RetraceWeb.jpg" alt="Tweet Reader APM"></li>
+                                <li><img src="~/Content/img/Stackify/_SupportWeb.jpg" alt="Support Site"></li>
+                            </ul>
                         </div>
-                        <div class="row">
-                            
-                        </div>
+                        <!-- End Images slider -->
                     </div>
-                </footer>
-                <!-- End footer -->
+                    <img src="~/Content/img/macbook.png" class="img-responsive" alt="Laptop" />
+                </div>
             </div>
         </div>
     </div>
 </div>
+<!-- End slider wrapper -->
+<!-- Start contain wrapper -->
+
+<ol class="process-line">
+    <li class="col-md-3 col-sm-3">
+        <span class="icons"><i class="fa fa-tachometer"></i></span>
+        <h5>APM</h5>
+        <p>The flagship of Stackify, our APM product gathers in-depth and relevant performance data for your applications.</p>
+        <a href="https://stackify.com/application-performance-management-solution/">Learn More</a>
+    </li>
+    <li class="col-md-3 col-sm-3">
+        <span class="icons"><i class="fa fa-file-text-o"></i></span>
+        <h5>Log Management</h5>
+        <p>Routing your logs into Retrace is easy to implement and searching through logs is a breeze in the Logs Dashboard.</p>
+        <a href="https://stackify.com/log-management/">Learn More</a>
+    </li>
+    <li class="col-md-3 col-sm-3">
+        <span class="icons"><i class="fa fa-bug"></i></span>
+        <h5>Error Monitoring</h5>
+        <p>Finding bugs when and where they happen is easier than ever with Stackify!</p>
+        <a href="https://stackify.com/error-monitoring/">Learn More</a>
+    </li>
+    <li class="col-md-3 col-sm-3">
+        <span class="icons"><i class="fa fa-bar-chart"></i></span>
+        <h5>App Metrics</h5>
+        <p>The App Dashboard will show a broad overview of health of the app.</p>
+        <a href="https://stackify.com/application-metrics/">Learn More</a>
+    </li>
+</ol>
+
+@* TODO add text about Retrace 'Read More' to website*@
+
+   @*Supported .NET Technologies & 3rd Party Libraries
+    The following frameworks are automatically supported by Stackify in v2.4. APM+ profiler traces will include details from these libraries. Please note that most async functions are supported in the following libraries as well. For services that are running on your servers, you can also set up monitors for them.
+
+    UI Frameworks
+
+    WebForms
+    MVC
+    Web API
+    WCF
+    Nancy
+    ServiceStack
+    Owin
+    Databases
+
+    Most ORM solutions like Entity Framework, NHibernate, Dapper, Linq2SQL and others work perfectly. Unfortunately, Devart libraries are not currently supported.
+
+    SQL Server
+    MySql (MySql.Data.MySqlClient)
+    Oracle (Oracle.ManagedDataAccess & System.Data.OracleClient)
+    Postgres (Npgsql)
+    SQL Server CE
+    ODBC via OdbcCommand
+    Storage/NoSQL
+
+    MongoDB
+    Elasticsearch
+    RavenDB
+    Azure libraries (see below)
+    AWS libraries (see below)
+    Cache
+
+    Redis (ServiceStack & StackExchange)
+    memcached (enyim)
+    AppFabric & Azure Cache (Microsoft cache)
+    Queues
+
+    Azure Service Bus
+    Azure Storage Queue
+    MSMQ
+    NServiceBus
+    Web Requests
+
+    Low level HttpWebRequest/HttpWebResponse
+    WebClient
+    HttpClient
+    RestSharp
+    Auto generated WCF proxy clients
+    Plus others from libraries that use HTTP within them like Elasticsearch, Azure storage, etc
+    Azure
+
+    SQL Azure
+    Storage (Blogs, Queues, Tables)
+    Document DB
+    Azure Service Bus
+    Caching (via Redis & AppFabric support)
+    AWS
+
+    S3
+    SimpleDB
+    SimpleEmail
+    SimpleNotificationService (SNS)
+    SimpleWorkflow
+    SQS
+    ElastiCache (via memcached & redis support)
+    CloudSearch
+    Redshift
+    ElasticMapReduce
+    ElasticTranscoder
+    Glacier
+    Other
+
+    Retrace also tracks and shows times for some other various activities
+
+    Estimated compilation time
+    HTTP Modules
+    Reading incoming HTTP post data and deserializing requests
+    Serializing and sending HTTP responses
+    Request queuing
+*@
+
 <!-- End contain wrapper -->
 @section scripts{
+    <!-- Flexslider -->
+    <script src="~/Content/js/flexslider/jquery.flexslider-min.js"></script>
+    <script src="~/Content/js/flexslider/setting.js"></script>
 }

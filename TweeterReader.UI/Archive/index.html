@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="ico/favicon.png">
+
+    <title>Creativica - Multiple creative HTML5 template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Color -->
+    <link id="skin" href="skins/default.css" rel="stylesheet">
+	
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+ 	<!-- Start preloading -->
+	<div id="loading" class="loading-invisible">
+		<div class="loading-center">
+			<div class="loading-center-absolute">
+				<div class="object" id="object_one"></div>
+				<div class="object" id="object_two"></div>
+				<div class="object" id="object_three"></div>
+				<div class="object" id="object_four"></div>
+				<div class="object" id="object_five"></div>
+				<div class="object" id="object_six"></div>
+				<div class="object" id="object_seven"></div>
+				<div class="object" id="object_eight"></div>
+				<div class="object" id="object_big"></div>
+			</div>
+			<p>Please wait...</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		  document.getElementById("loading").className = "loading-visible";
+		  var hideDiv = function(){document.getElementById("loading").className = "loading-invisible";};
+		  var oldLoad = window.onload;
+		  var newLoad = oldLoad ? function(){hideDiv.call(this);oldLoad.call(this);} : hideDiv;
+		  window.onload = newLoad;
+	</script>
+	<!-- End preloading -->
+
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-inverse navbar-sticky bootsnav">
+        <div class="container">            
+            <!-- Start Atribute Navigation -->
+            <div class="attr-nav">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+                            <i aria-hidden="true" class="fa fa-shopping-bag"></i>
+                            <span class="badge">3</span>
+                        </a>
+                        <ul class="dropdown-menu cart-list">
+                            <li>
+                                <a href="#" class="photo"><img src="img/product/thumbs/thumb01.jpg" class="cart-thumb" alt="" /></a>
+                                <h6><a href="#">Delica omtantur </a></h6>
+                                <p>2x - <span class="price">$99.99</span></p>
+                            </li>
+                            <li>
+                                <a href="#" class="photo"><img src="img/product/thumbs/thumb02.jpg" class="cart-thumb" alt="" /></a>
+                                <h6><a href="#">Omnes ocurreret</a></h6>
+                                <p>1x - <span class="price">$33.33</span></p>
+                            </li>
+                            <li>
+                                <a href="#" class="photo"><img src="img/product/thumbs/thumb03.jpg" class="cart-thumb" alt="" /></a>
+                                <h6><a href="#">Agam facilisis</a></h6>
+                                <p>2x - <span class="price">$99.99</span></p>
+                            </li>
+                            <li class="total">
+                                <span class="pull-right"><strong>Total</strong>: $233.31</span>
+                                <a href="shopping-cart.html" class="btn btn-primary">Cart</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Atribute Navigation -->
+
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#brand"><img src="img/brand/logo-white.png" class="logo" alt=""></a>
+            </div>
+            <!-- End Header Navigation -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Home</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Minimalist</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="index.html">Default template</a></li>
+                                    <li><a href="index-alt1-filmroll.html">Filmroll slide</a></li>
+                                    <li><a href="index-alt2-creative-slide.html">Creative slide</a></li>
+	                                <li><a href="index-alt3-minimalist.html">Minimalist</a></li>
+                                    <li><a href="index-alt4-minimalist-2column.html">Minimalist 2column</a></li>
+                                    <li><a href="index-alt5-fullwidth.html">Fullwidth</a></li>
+									<li><a href="index-alt6-text-slide.html">Text slide</a></li>
+									<li><a href="index-alt7-simple-navigation.html">Simple navigation</a></li>
+									<li><a href="index-alt8-typer-text.html">Typer text</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Premium slider</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="index-alt9-clean-revolution-slider.html">Clean revolution</a></li>
+                                    <li><a href="index-alt10-agency-revolution-slider.html">Agency revolution</a></li>
+                                    <li><a href="index-alt11-creative-revolution-slider.html">Creative revolution</a></li>
+                                    <li><a href="index-alt12-corporate-revolution-slider.html">Corporate revolution</a></li>
+                                    <li><a href="index-alt13-minimalist-revolution-slider.html">Minimalist revolution</a></li>
+                                    <li><a href="index-alt14-boxed-revolution-slider.html">Boxed revolution</a></li>
+                                    <li><a href="index-alt15-clean-bgslider.html">Clean bgslider</a></li>
+									<li><a href="index-alt16-halfcolumn-bgslider.html">Half column bgslider</a></li>
+									<li><a href="index-alt17-shake-text.html">Shake text</a></li>
+									<li><a href="index-alt18-fullwidth-text.html">Fullwidth text</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Sidebar navigation</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="index-alt19-default-sidebar-nav.html">Default sidebar</a></li>
+                                    <li><a href="index-alt20-dark-sidebar-nav.html">Dark sidebar</a></li>
+                                    <li><a href="index-alt21-minimalist-sidebar-nav.html">Minimalist sidebar</a></li>
+                                    <li><a href="index-alt22-revolution-sidebar-nav.html">Revolution sidebar</a></li>
+                                    <li><a href="index-alt23-grider-sidebar-nav.html">Grider sidebar</a></li>
+									<li><a href="index-alt24-fullwidth-sidebar-nav.html">Fullwidth sidebar</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>	
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Page</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >About</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="about.html">About Alt1</a></li>
+                                    <li><a href="about-alt1.html">About Alt2</a></li>
+                                    <li><a href="about-alt2.html">About Alt3</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Services</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="services.html">Services Alt1</a></li>
+                                    <li><a href="services-alt1.html">Services Alt2</a></li>
+                                    <li><a href="services-alt2.html">Services Alt3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="faq.html">Faq</a></li>
+							<li><a href="site-map.html">Site map</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Dropdown</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Menu alt</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Submenu</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Menu alt</a></li>
+                                            <li><a href="#">Menu alt</a></li>
+                                            <li><a href="#">Menu alt</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Menu alt</a></li>
+                                    <li><a href="#">Menu alt</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Blog</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Blog left sidebar</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="blog-leftsidebar.html">Blog left sidebar alt1</a></li>
+                                    <li><a href="blog-leftsidebar-alt1.html">Blog left sidebar alt2</a></li>
+                                    <li><a href="blog-leftsidebar-alt2.html">Blog left sidebar alt3</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Blog Right sidebar</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="blog-rightsidebar.html">Blog right sidebar alt1</a></li>
+                                    <li><a href="blog-rightsidebar-alt1.html">Blog right sidebar alt2</a></li>
+                                    <li><a href="blog-rightsidebar-alt2.html">Blog right sidebar alt3</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Blog fullwidth</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="blog-nosidebar.html">Blog fullwidth alt1</a></li>
+                                    <li><a href="blog-nosidebar-alt1.html">Blog fullwidth alt2</a></li>
+                                    <li><a href="blog-nosidebar-alt2.html">Blog fullwidth alt3</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Single Post</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="singlepost-leftsidebar.html">Single Post alt1</a></li>
+                                    <li><a href="singlepost-nosidebar.html">Single Post alt2</a></li>
+                                    <li><a href="singlepost-rightsidebar.html">Single Post alt3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Portfolio</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="portfolio-alt1.html">Portfolio alt1</a></li>
+							<li><a href="portfolio-alt2.html">Portfolio alt2</a></li>
+							<li><a href="portfolio-alt3.html">Portfolio alt3</a></li>
+							<li><a href="portfolio-alt4.html">Portfolio alt4</a></li>
+							<li><a href="portfolio-alt5.html">Portfolio alt5</a></li>
+							<li><a href="portfolio-alt6.html">Portfolio alt6</a></li>
+							<li><a href="portfolio-alt7.html">Portfolio alt7</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown megamenu-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components</a>
+                        <ul class="dropdown-menu megamenu-content" role="menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-menu col-md-3">
+                                        <h6 class="title">Interactive</h6>
+                                        <div class="content">
+                                            <ul class="menu-col">
+                                                <li><a href="call-to-action.html">Call to action</a></li>
+                                                <li><a href="counter.html">Counter</a></li>
+                                                <li><a href="maps.html">Google maps</a></li>
+                                                <li><a href="media-responsive.html">Media responsive</a></li>
+                                                <li><a href="modal.html">Modal</a></li>
+                                                <li><a href="process.html">Process</a></li>
+                                                <li><a href="progress.html">Progress bar</a></li>
+                                                <li><a href="pricing.html">Pricing</a></li>
+                                                <li><a href="team.html">Team</a></li>
+                                                <li><a href="testimoni.html">Testimoni</a></li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- end col-3 -->
+                                    <div class="col-menu col-md-3">
+                                        <h6 class="title">Elements</h6>
+                                        <div class="content">
+                                            <ul class="menu-col">
+												<li><a href="accordion.html">Accordion</a></li>
+                                                <li><a href="alert.html">Alert</a></li>
+                                                <li><a href="button.html">Button</a></li>
+                                                <li><a href="form.html">Form</a></li>
+                                                <li><a href="icon.html">Icons style</a></li>
+                                                <li><a href="icon-box.html">Icons with box</a></li>
+												<li><a href="icon-text.html">Icons with text</a></li>
+                                                <li><a href="images.html">Images style</a></li>
+												<li><a href="pagination.html">Pagination</a></li>
+												<li><a href="tab.html">Tab style</a></li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- end col-3 -->
+                                    <div class="col-menu col-md-3">
+                                        <h6 class="title">Typography & MLsc</h6>
+                                        <div class="content">
+                                            <ul class="menu-col">                                                
+                                                <li><a href="typography.html">Typography</a></li>
+                                                <li><a href="heading.html">Heading</a></li>
+                                                <li><a href="blockquote.html">Blockquote</a></li>
+                                                <li><a href="columns.html">Columns</a></li>
+                                                <li><a href="divider.html">Separators</a></li>
+                                                <li><a href="dropcaps.html">Dropcaps</a></li>
+                                                <li><a href="highlights.html">Highlights</a></li>
+                                                <li><a href="list.html">List style</a></li>
+                                                <li><a href="maps.html">Maps</a></li>
+                                                <li><a href="modal.html">Modal</a></li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- end col-3 -->
+                                    <div class="col-menu col-md-3">
+                                        <h6 class="title">Extra page</h6>
+                                        <div class="content">
+                                            <ul class="menu-col">
+                                                <li><a href="error404.html">Error 404</a></li>
+                                                <li><a href="maintenance.html">Maintenance</a></li>
+                                                <li><a href="signin.html">Signin</a></li>
+                                                <li><a href="signup.html">Signin</a></li>
+                                                <li><a href="underconstruction.html">Underconstruction alt1</a></li>
+												<li><a href="underconstruction-alt1.html">Underconstruction alt2</a></li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- end col-3 -->
+                                </div><!-- end row -->
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Shop</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Shop page</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="shop.html">Shop page alt1</a></li>
+                                    <li><a href="shop-alt1.html">Shop page alt2</a></li>
+									<li><a href="shop-alt2.html">Shop page alt3</a></li>
+									<li><a href="shop-alt3.html">Shop page alt4</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="shop-detail.html">Shop detail</a></li>
+                            <li><a href="shopping-cart.html">Shopping cart</a></li>
+                            <li><a href="shopping-checkout.html">Checkout</a></li>
+                        </ul>
+                    </li>
+					<li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <!-- End Navigation -->
+
+	<!-- Start page heading -->
+	<div class="page-heading">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7">
+					<div class="intro">
+						<h4>
+						Creativica is a clean, modern and responsive bootstrap template, suitable for creative agency 
+						</h4>
+						<p>
+						High-quality design with a minimalist style and lot features
+						</p>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<form>
+						<fieldset class="form-search">
+							<input type="text" class="input-search" placeholder="To search type and hit enter" />
+							<button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End page heading -->
+	
+	<!-- Start slider wrapper -->
+	<div class="slider-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="slider-content">
+						<div class="flexslider-wrapp">
+							<!-- Start Images slider -->
+							<div class="flexslider">
+								<ul class="slides">
+									<li><img src="img/slider/img01.png" alt=""></li>
+									<li><img src="img/slider/img02.png" alt=""></li>
+									<li><img src="img/slider/img03.png" alt=""></li>
+								</ul>
+							</div>
+							<!-- End Images slider -->
+						</div>
+						<img src="img/macbook.png" class="img-responsive" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End slider wrapper -->
+	
+	<!-- Start contain wrapper -->
+	<div class="contain-wrapp">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="col-icon absolute-left">
+						<i class="fa fa-laptop"></i>
+						<h5>Responsive</h5>
+						<p>
+						Mollis volumus ne ius. Mei fierent lucilius ne. In oratio exerci democritum vix. Ad pro possim latine laoreet postulant no per.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="col-icon absolute-left">
+						<i class="fa fa-magic"></i>
+						<h5>Clean design</h5>
+						<p>
+						Mollis volumus ne ius. Mei fierent lucilius ne. In oratio exerci democritum vix. Ad pro possim latine laoreet postulant no per.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="col-icon absolute-left">
+						<i class="fa fa-trophy"></i>
+						<h5>Lot features</h5>
+						<p>
+						Mollis volumus ne ius. Mei fierent lucilius ne. In oratio exerci democritum vix. Ad pro possim latine laoreet postulant no per.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="divider margintop50"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="title-head centered">
+						<span>Our gallery</span>
+						<h4>Our recent project</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<!-- Start portfolio filter -->
+					<div id="js-filters-masonry-projects" class="cbp-l-filters-buttonCenter cbp-border-filter">
+						<div data-filter="*" class="cbp-filter-item-active cbp-filter-item">
+							All <div class="cbp-filter-counter"></div>
+						</div>
+						<div data-filter=".identity" class="cbp-filter-item">
+							Identity <div class="cbp-filter-counter"></div>
+						</div>
+						<div data-filter=".web-design" class="cbp-filter-item">
+							Web Design <div class="cbp-filter-counter"></div>
+						</div>
+						<div data-filter=".graphic" class="cbp-filter-item">
+							Graphic <div class="cbp-filter-counter"></div>
+						</div>
+						<div data-filter=".logos" class="cbp-filter-item">
+							Logo <div class="cbp-filter-counter"></div>
+						</div>
+						<div data-filter=".fonts" class="cbp-filter-item">
+							Fonts <div class="cbp-filter-counter"></div>
+						</div>
+					</div>
+					<!-- End portfolio filter -->
+				
+					<!-- Start portfolio -->
+					<div id="js-grid-masonry-projects" class="cbp cbp-l-grid-masonry-projects">
+						<!-- Start project 1 -->
+						<div class="cbp-item graphic">
+							<a href="portfolioDetail/project1.html" class="cbp-caption cbp-singlePage" rel="nofollow">
+								<div class="cbp-caption-defaultWrap">
+									<img src="img/gallery/480x460/img01.jpg" alt="">
+								</div>
+								<div class="cbp-caption-activeWrap">
+									<div class="cbp-l-caption-zoom">
+										<div class="cbp-l-caption-body">
+											<div class="cbp-l-caption-title">Consulatu</div>
+											<div class="cbp-l-caption-desc">by 99webpage</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="cbp-custom-title">
+								<a href="portfolioDetail/project1.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Consulatu</a>
+								<div class="cbp-projects-desc">Graphic</div>
+								<ul class="cbp-project-action">
+									<li><a href="#">202 <i class="fa fa-heart"></i></a></li>
+									<li><a href="#">80 <i class="fa fa-download"></i></a></li>
+									<li><a href="#"><span class="project-label">Free</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- End project 1 -->
+						
+						<!-- Start project 2 -->
+						<div class="cbp-item web-design">
+							<a href="portfolioDetail/project2.html" class="cbp-caption cbp-singlePage" rel="nofollow">
+								<div class="cbp-caption-defaultWrap">
+									<img src="img/gallery/480x460/img02.jpg" alt="">
+								</div>
+								<div class="cbp-caption-activeWrap">
+									<div class="cbp-l-caption-zoom">
+										<div class="cbp-l-caption-body">
+											<div class="cbp-l-caption-title">Democritum</div>
+											<div class="cbp-l-caption-desc">by 99webpage</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="cbp-custom-title">
+								<a href="portfolioDetail/project2.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Democritum</a>
+								<div class="cbp-projects-desc">Web design</div>
+								<ul class="cbp-project-action">
+									<li><a href="#">112 <i class="fa fa-heart"></i></a></li>
+									<li><a href="#">50 <i class="fa fa-download"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- End project 2 -->
+						
+						<!-- Start project 3 -->
+						<div class="cbp-item logos">
+							<a href="portfolioDetail/project3.html" class="cbp-caption cbp-singlePage" rel="nofollow">
+								<div class="cbp-caption-defaultWrap">
+									<img src="img/gallery/480x460/img03.jpg" alt="">
+								</div>
+								<div class="cbp-caption-activeWrap">
+									<div class="cbp-l-caption-zoom">
+										<div class="cbp-l-caption-body">
+											<div class="cbp-l-caption-title">Vulputate</div>
+											<div class="cbp-l-caption-desc">by 99webpage</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="cbp-custom-title">
+								<a href="portfolioDetail/project3.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Vulputate</a>
+								<div class="cbp-projects-desc">Logos</div>
+								<ul class="cbp-project-action">
+									<li><a href="#">55 <i class="fa fa-heart"></i></a></li>
+									<li><a href="#">12 <i class="fa fa-download"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- End project 3 -->
+						
+						<!-- Start project 4 -->
+						<div class="cbp-item identity">
+							<a href="portfolioDetail/project4.html" class="cbp-caption cbp-singlePage" rel="nofollow">
+								<div class="cbp-caption-defaultWrap">
+									<img src="img/gallery/480x460/img04.jpg" alt="">
+								</div>
+								<div class="cbp-caption-activeWrap">
+									<div class="cbp-l-caption-zoom">
+										<div class="cbp-l-caption-body">
+											<div class="cbp-l-caption-title">Eligendi</div>
+											<div class="cbp-l-caption-desc">by 99webpage</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="cbp-custom-title">
+								<a href="portfolioDetail/project4.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Eligendi</a>
+								<div class="cbp-projects-desc">Identity</div>
+								<ul class="cbp-project-action">
+									<li><a href="#">87 <i class="fa fa-heart"></i></a></li>
+									<li><a href="#">23 <i class="fa fa-download"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- End project 4 -->
+						
+						<!-- Start project 5 -->
+						<div class="cbp-item fonts">
+							<a href="portfolioDetail/project5.html" class="cbp-caption cbp-singlePage" rel="nofollow">
+								<div class="cbp-caption-defaultWrap">
+									<img src="img/gallery/480x460/img05.jpg" alt="">
+								</div>
+								<div class="cbp-caption-activeWrap">
+									<div class="cbp-l-caption-zoom">
+										<div class="cbp-l-caption-body">
+											<div class="cbp-l-caption-title">Platonem</div>
+											<div class="cbp-l-caption-desc">by 99webpage</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="cbp-custom-title">
+								<a href="portfolioDetail/project5.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Platonem</a>
+								<div class="cbp-projects-desc">Fonts</div>
+								<ul class="cbp-project-action">
+									<li><a href="#">111 <i class="fa fa-heart"></i></a></li>
+									<li><a href="#">98 <i class="fa fa-download"></i></a></li>
+									<li><a href="#"><span class="project-label">Free</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- End project 5 -->
+						
+						<!-- Start project 6 -->
+						<div class="cbp-item identity">
+							<a href="portfolioDetail/project6.html" class="cbp-caption cbp-singlePage" rel="nofollow">
+								<div class="cbp-caption-defaultWrap">
+									<img src="img/gallery/480x460/img06.jpg" alt="">
+								</div>
+								<div class="cbp-caption-activeWrap">
+									<div class="cbp-l-caption-zoom">
+										<div class="cbp-l-caption-body">
+											<div class="cbp-l-caption-title">Cibo</div>
+											<div class="cbp-l-caption-desc">by 99webpage</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="cbp-custom-title">
+								<a href="portfolioDetail/project6.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Cibo</a>
+								<div class="cbp-projects-desc">Identity</div>
+								<ul class="cbp-project-action">
+									<li><a href="#">76 <i class="fa fa-heart"></i></a></li>
+									<li><a href="#">22 <i class="fa fa-download"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- End project 6 -->
+					</div>
+					<!-- End portfolio -->
+					
+					<!-- Start portfolio load more-->
+					<div id="js-loadMore-masonry-projects" class="cbp-l-loadMore-button">
+						<a href="portfolioDetail/loadMore.html" class="cbp-l-loadMore-link" rel="nofollow">
+							<span class="cbp-l-loadMore-defaultText">Load more</span>
+							<span class="cbp-l-loadMore-loadingText">Loading...</span>
+							<span class="cbp-l-loadMore-noMoreLoading">No more works</span>
+						</a>
+					</div>
+					<!-- End portfolio load more-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End contain wrapper -->
+	
+	<div class="clearfix"></div>
+	
+	<!-- Start footer -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2 col-sm-2 col-xs-6">
+					<div class="widget">
+						<ul class="link-list">
+							<li><a href="#">About us</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Meet team</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Help</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-6">
+					<div class="widget">
+						<ul class="link-list">
+							<li><a href="#">Themes</a></li>
+							<li><a href="#">Free resources</a></li>
+							<li><a href="#">Logi design</a></li>
+							<li><a href="#">UI/UX PSD</a></li>
+							<li><a href="#">Graphic</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="widget">
+						<div class="tweet"></div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="widget">
+						<h5>Stay update with us !</h5>
+						<!-- Start Subscribe -->
+						<div class="input-group">
+							<input type="text" class="form-subscribe" placeholder="Enter your email address...">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="button"><span class="fa fa-paper-plane"></span></button>
+							</span>
+						</div>
+						<!-- End Subscribe -->
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="subfooter">
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<p class="copyright">2016 &copy; Copyright <a href="http://99webpage.com/">99webpage.</a> All rights Reserved.</p>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<ul class="social-network">
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+									<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+									<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+									<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End footer -->
+	
+	<!-- Start to top -->  
+    <a href="#" class="scrollToTop">
+        <i class="fa fa-chevron-up"></i>
+    </a>  
+    <!-- End to top -->
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/bootsnav.js"></script>
+	<script src="js/jquery.easing-1.3.min.js"></script>
+	
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+	
+	<!-- Custom form -->
+	<script src="js/form/jcf.js"></script>
+	<script src="js/form/jcf.scrollable.js"></script>
+	<script src="js/form/jcf.select.js"></script>
+	
+	<!-- Custom checkbox and radio -->
+	<script src="js/checkator/fm.checkator.jquery.js"></script>
+	<script src="js/checkator/setting.js"></script>
+	
+    <!-- Custom input file -->
+	<script src="js/custominput/modernizr.js"></script>
+	<script src="js/custominput/custom-file-input.js"></script>
+	
+    <!-- Cube portfolio -->
+	<script src="js/cubeportfolio/jquery.cubeportfolio.min.js"></script>
+	<script src="js/cubeportfolio/masonry-projects.js"></script>
+	
+    <!-- Flexslider -->
+	<script src="js/flexslider/jquery.flexslider-min.js"></script>
+	<script src="js/flexslider/setting.js"></script>
+	
+    <!-- Twitter -->
+	<script src="js/twitter/tweetie.min.js"></script>
+	<script src="js/twitter/ticker.js"></script>
+	<script src="js/twitter/setting.js"></script>
+	
+    <!-- Custom -->
+    <script src="js/custom.js"></script>
+  </body>
+</html>
