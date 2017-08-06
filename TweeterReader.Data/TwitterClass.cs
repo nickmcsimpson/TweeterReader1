@@ -11,6 +11,8 @@ namespace TweeterReader.Data
 {
     public class TwitterClass
     {
+        //TODO: Add DVORAK and AVG Efficiency
+
         public AnalyzeTweet[] tweetStats;
         public Status[] tweetArray;
 
@@ -18,7 +20,16 @@ namespace TweeterReader.Data
         {
             List<Status> twitterFeed;
             //Call GetTwitterFeeds using user and number
-           twitterFeed = GetTwitterFeeds(twitteruser, numTweets);
+            try
+            {
+            twitterFeed = GetTwitterFeeds(twitteruser, numTweets);
+            }
+            catch (Exception)
+            {
+                logger.Error("Unable to Call Twitter API");
+                throw;
+            }
+           
             //call analyze tweet to generate stats use object? can I call to object parts from view?
             int tweetcount = 0;
             foreach (var tweet in twitterFeed)

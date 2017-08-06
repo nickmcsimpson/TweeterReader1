@@ -35,6 +35,7 @@ namespace IdentitySample.Controllers
             return View();
         }
         public ActionResult Tweets() {
+            Logger logger = LogManager.GetCurrentClassLogger();
             #region Old Stuff
             //Taking out the viewdata also did nothing to help
             //var tracer = StackifyLib.ProfileTracer.CreateAsTrackedFunction("Tweets Controller"); tracer.Exec(() => { did not help
@@ -98,10 +99,19 @@ namespace IdentitySample.Controllers
             //    logger.Error(ex, "An Exception was thrown");
             //}
             #endregion
+            try
+            {
+            TwitterClass Stackify = new TwitterClass("Stackify", 500);
+                return View(Stackify);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Unable to Create Twitter Class");
+                return View("Error", new HandleErrorInfo(ex, "Home", "Index"));
+                throw;
+            }
 
-            TwitterClass Stackify = new TwitterClass("Stackify", 5);
 
-            return View(Stackify);
             //tweetArray2
         }
 
