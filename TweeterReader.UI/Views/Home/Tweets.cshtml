@@ -5,160 +5,161 @@
 @model TweeterReader.Data.TwitterClass
 
 
-<div class="contain-wrapp paddingbot-clear mobile-wrapp">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10">
-                <div class="intro">
-                    <h4>
-                        Twitter Tweet Typing Analysis
-                    </h4>
-                    <p>
-                        Discover the workload of typing on a QWERTY keyboard, how efficient is it?
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <img src="~/Content/img/Stackify/TwitterIcon.jpg" class="img-circle img-responsive" alt="Image demo 2" />
+<div class="col-md-10 col-md-push-1">
+    <div class="row">
+        <div class="col-sm-10">
+            <div class="intro">
+                <h4>
+                    Twitter Tweet Typing Analysis
+                </h4>
+                <p>
+                    Discover the workload of typing on a QWERTY keyboard, how efficient is it?
+                </p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="divider"></div>
-            </div>
+        <div class="col-sm-2">
+            <img src="~/Content/img/Stackify/TwitterIcon.jpg" class="img-circle img-responsive" alt="Image demo 2" />
         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="divider"></div>
+        </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="title-head centered">
-                    <span>Tweets</span>
-                    <h4>Typing analysis</h4>
-                </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="title-head centered">
+                <span>Tweet Analysis</span>
+                <h4>Statistics Explanation</h4>
+            </div>
+            <div class="process-number">
+                <span class="pn-number">01</span>
+                <span class="pn-steps">Data</span>
+                <h5>Key Strokes</h5>
+                <p>Total number of Keystrokes used to type the tweet</p>
+            </div>
+            <div class="process-number">
+                <span class="pn-number">02</span>
+                <span class="pn-steps">Data</span>
+                <h5>Finger Travel</h5>
+                <p>Approximation of the distance moved by fingers, calculated in 'keys'</p>
+            </div>
+            <div class="process-number">
+                <span class="pn-number">03</span>
+                <span class="pn-steps">Data</span>
+                <h5>Distance/key</h5>
+                <p>Calculated using finger travel per stroke</p>
+            </div>
+            <div class="process-number">
+                <span class="pn-number">04</span>
+                <span class="pn-steps">Data</span>
+                <h5>Hands</h5>
+                <p>Using the Keyboard layout and generic typing patterns the number of keys typed for each finger is counted</p>
             </div>
         </div>
-        @* Generate Tweets and stats *@     
-        @for (int i = 0; i < Model.tweetArray.Length; i++)
-        {
-            <div class="cta-wrapp">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <h4>@Model.tweetArray[i].Text</h4>
-                        </div>
-                        <div class="col-md-3">
-                            <span class="testimoni-author">Stackify</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h4>Overview</h4>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@Model.tweetStats[i].Strokes"><span class="fa fa-keyboard-o"></span><span class="start-count">0</span></div>
-                        <p>Key Strokes</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@Model.tweetStats[i].KeyTravel"><span class="fa fa-adjust"></span><span class="start-count">0</span></div>
-                        <p>Finger Travel</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div><span class="fa fa-balance-scale"></span><h2 style="color: #787878;">@Model.tweetStats[i].Efficiency</h2></div>
-                        <p>Distance/Key</p>
-                    </div>
-                </div>
-            </div>
-            <div></div>
-            <h4>Right Hand</h4>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@Model.tweetStats[i].RIndex"><span class="fa fa-hand-o-right"></span><span class="start-count">0</span></div>
-                        <p>Right Index</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@Model.tweetStats[i].RMiddle"><span class="fa fa-hand-o-right"></span><span class="start-count">0</span></div>
-                        <p>Right Middle</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@Model.tweetStats[i].RRing"><span class="fa fa-hand-o-right"></span><span class="start-count">0</span></div>
-                        <p>Right Ring</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@Model.tweetStats[i].RPinkie"><span class="fa fa-hand-o-right"></span><span class="start-count">0</span></div>
-                        <p>Right Pinkie</p>
-                    </div>
-                </div>
-            </div>
-            <div></div>
-            <h4>Left Hand</h4>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@Model.tweetStats[i].LIndex"><span class="fa fa-hand-o-left"></span><span class="start-count">0</span></div>
-                        <p>Left Index</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@Model.tweetStats[i].LMiddle"><span class="fa fa-hand-o-left"></span><span class="start-count">0</span></div>
-                        <p>Left Middle</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@Model.tweetStats[i].LRing"><span class="fa fa-hand-o-left"></span><span class="start-count">0</span></div>
-                        <p>Left Ring</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row count" style="    display: inline-block;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-item">
-                        <div class="count-value" data-count="@Model.tweetStats[i].LPinkie"><span class="fa fa-hand-o-left"></span><span class="start-count">0</span></div>
-                        <p>Left Pinkie</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="divider"></div>
-                </div>
-            </div>
-        }
     </div>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="divider"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="title-head centered">
+            <span>Tweets</span>
+            <h4>Typing analysis</h4>
+        </div>
+    </div>
+</div>
+@* Generate Tweets and stats *@
+@for (int i = 0; i < Model.tweetArray.Length; i++)
+{
+    <div class="cta-wrapp">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <h4>@Model.tweetArray[i].Text</h4>
+                </div>
+                <div class="col-md-3">
+                    <span class="testimoni-author">&#64;Stackify</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10 col-sm-push-1 col-md-push-0" style="padding:5%">
+        <h4 style="text-align:center"><i class="fa fa-hand-o-left"></i> Left Hand</h4>
+        <div class="row">
+            <div class="col-md-3 col-sm-3">
+                <h5>Left<br />Pinkie:</h5>
+                <h4 class="price">@Model.tweetStats[i].LPinkie</h4>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <h5>Left<br />Ring:</h5>
+                <h4 class="price">@Model.tweetStats[i].LRing</h4>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <h5>Left<br />Middle:</h5>
+                <h4 class="price">@Model.tweetStats[i].LMiddle</h4>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <h5>Left<br />Index:</h5>
+                <h4 class="price">@Model.tweetStats[i].LIndex</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-10 col-sm-push-1 col-md-push-0" style="padding:5%">
+        <h4 style="text-align:center"><i class="fa fa-keyboard-o"></i> Overview</h4>
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <h5>Key<br />Strokes:</h5>
+                <h4 class="price">@Model.tweetStats[i].Strokes</h4>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <h5>Finger<br />Travel:</h5>
+                <h4 class="price">@Model.tweetStats[i].KeyTravel</h4>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <h5>Distance<br />/Key:</h5>
+                <h4 class="price">@Model.tweetStats[i].Efficiency</h4>
+            </div>
+        </div>
+    </div>
+        <div class="col-md-4 col-sm-10 col-sm-push-1 col-md-push-0" style="padding:5%">
+            <h4 style="text-align:center"><i class="fa fa-hand-o-right"></i> Right Hand</h4>
+            <div class="row">
+                <div class="col-md-3 col-sm-3">
+                    <h5>Right<br />Index:</h5>
+                    <h4 class="price">@Model.tweetStats[i].RIndex</h4>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <h5>Right<br />Middle:</h5>
+                    <h4 class="price">@Model.tweetStats[i].RMiddle</h4>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <h5>Right<br />Ring:</h5>
+                    <h4 class="price">@Model.tweetStats[i].RRing</h4>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <h5>Right<br />Pinkie:</h5>
+                    <h4 class="price">@Model.tweetStats[i].RPinkie</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                    <div class="col-md-12">
+                        <div class="divider"></div>
+                    </div>
+                </div>
+}
+
 <!-- End contain wrapper -->
 @section scripts{
-@*<script type="text/javascript">
-    $(window).load(function () {
-        $("#partialViewHolder").load( "@Url.Content("_TweetStats(@Model)")" );
-   $( "#partialViewHolder" ).show();
-})
-</script>*@
+    @*<script type="text/javascript">
+            $(window).load(function () {
+                $("#partialViewHolder").load( "@Url.Content("_TweetStats(@Model)")" );
+           $( "#partialViewHolder" ).show();
+        })
+        </script>*@
 }

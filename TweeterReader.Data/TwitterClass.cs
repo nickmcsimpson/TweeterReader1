@@ -11,6 +11,8 @@ namespace TweeterReader.Data
 {
     public class TwitterClass
     {
+        //TODO: Add DVORAK and AVG Efficiency
+
         public AnalyzeTweet[] tweetStats;
         public Status[] tweetArray;
 
