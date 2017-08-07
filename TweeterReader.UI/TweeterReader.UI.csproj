@@ -603,6 +603,7 @@
     <Content Include="Content\img\Stackify\Prefix_Logo_OnWhite_600.png" />
     <Content Include="Content\img\Stackify\Retrace_Logo_OnWhite_600.png" />
     <Content Include="Content\img\Stackify\Stackify_Logo_Green_OnWhite_600.png" />
+    <Content Include="Content\img\Stackify\_APM.jpg" />
     <Content Include="Content\img\Stackify\_RetraceWeb.jpg" />
     <Content Include="Content\img\Stackify\_SupportWeb.jpg" />
     <Content Include="Content\img\star-half.png" />
