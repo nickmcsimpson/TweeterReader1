@@ -2,7 +2,7 @@
 	'use strict';
     var initMap = function(){            
         if( $("#map").length ){
-            var center = {lat: -6.921167, lng: 107.610467};
+            var center = { lat: 38.962709, lng: -94.608852};
             var locations = [];
 
             $(".item-map").each(function(){
@@ -65,7 +65,7 @@
               marker = new google.maps.Marker({
                 position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                 map: map,
-                icon: 'js/maps/map-icon.png'
+                icon: 'Content/js/maps/map-icon.png'
               });
 
               google.maps.event.addListener(marker, 'click', (function(marker, i) {

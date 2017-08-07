@@ -227,10 +227,12 @@ namespace TweeterReader.Data
                     AnalyzeInput(char_input);
                 });
                 logger.Debug("#Finished #Analysis of tweet: " + tweet);
+                StackifyLib.Metrics.Count("Analyze Tweet", "Tweets Processed");
             }
 
             private void AnalyzeInput(char[] charInput)
             {
+                
                 //var tracer = StackifyLib.ProfileTracer.CreateAsTrackedFunction("Analyze Tweet"); tracer.Exec(() =>
                 //{//this didn't work
                 foreach (var letter in charInput)

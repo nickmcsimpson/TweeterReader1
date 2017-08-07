@@ -3,8 +3,14 @@
 @{
     ViewBag.Title = "Error";
 }
-<h1 class="text-danger">Error.@Model.Exception.Message</h1>
 
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="title-head centered">
+            <span class="text-danger">Error.@Model.Exception.Message</span>
+            <h4 class="text-danger">An error occurred while processing your request.</h4>
+        </div>
+    </div>
+</div>
 
 @Html.ActionLink("Back", @Model.ActionName, @Model.ControllerName)

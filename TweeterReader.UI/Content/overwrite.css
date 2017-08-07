@@ -944,21 +944,21 @@ Panel
 Button
 =========================== */
 .btn {
-	position:relative;
-	border-radius:2px;
-	padding: 15px 25px;
-	font-size: 14px;
-	line-height:14px;
-	text-transform:uppercase;
-	font-weight:400;
-	border: 1px solid transparent;
-	color: #464646;
-	background-color: #fff;	
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
+    position: relative;
+    border-radius: 2px;
+    padding: 15px 25px;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    border: 1px solid transparent;
+    color: #464646;
+    background-color: #60C322 !important;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .btn:hover{

@@ -1,43 +1,73 @@
 ﻿@{
-    ViewBag.Title = "Info";
+    ViewBag.Title = "Contact";
 }
 
-
-
-
-@* Show What/How *@
-<div class="custom-tabs" data-effect-in="flipInX">
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#tab1" data-toggle="tab">First</a>
-        </li>
-        <li>
-            <a href="#tab2" data-toggle="tab">Second</a>
-        </li>
-        <li>
-            <a href="#tab3" data-toggle="tab">Third</a>
-        </li>
-        <li>
-            <a href="#tab4" data-toggle="tab">Fourth</a>
-        </li>
-    </ul>
-
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <div class="tab-pane fade in active" id="tab1">
-            <p>[...]</p>
+<div class="col-md-10 col-md-push-1">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="intro">
+                <h4>
+                   Info
+                </h4>
+                <p>
+                   How to get in touch with the Stackify team.
+                </p>
+            </div>
         </div>
-        <div class="tab-pane fade" id="tab2">
-            <p>[...]</p>
-        </div>
-        <div class="tab-pane fade" id="tab3">
-            <p>[...]</p>
-        </div>
-        <div class="tab-pane fade" id="tab4">
-            <p>[...]</p>
+        <div class="col-sm-8">
+            <div class="contact-detail">
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="fa fa-home fa-2x fa-primary"></i>
+                        <h6>Our location</h6>
+                        <p>
+                            8900 Stateline Suite #100<br />
+                            Leawood, KS 66206<br />
+                            USA
+                        </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-support fa-2x fa-primary"></i>
+                        <h6>Support Site</h6>
+                        <p>
+                            <a href="http://support.stackify.com/" target="_blank">Go To Website</a>
+                        </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope fa-2x fa-primary"></i>
+                        <h6>Contact Support (Email)</h6>
+                        <p>
+                           support@stackify.com
+                        </p>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>  
+    @*<div class="row">
+        <div class="col-md-12">
+            <div class="divider"></div>
+        </div>
+    </div>*@
+    </div>
 
-@section scripts{
-}
+
+
+    <!-- Start google map 
+    <div class="map-wrapper">
+        <div id="map" class="maps"></div>
+        <div class="item-map"
+             data-lat="38.962709"
+             data-lng="-94.608852"
+             data-address="Stackify HQ">
+        </div>
+    </div>-->
+    <!-- End google map -->
+
+
+    
+
+    @section scripts{
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoRXkZUQLwRTaEF2MymFO5CzuCFBYejMQ"></script>
+<script src="~/Content/js/maps/setting.js"></script>
+    }

@@ -5,7 +5,7 @@
 @model Status[]
 
 @*  Show how things were setup for each:
-    
+
     0Send traffic
     0Configure monitors
     0Setup key transactions
@@ -23,7 +23,7 @@
     X-Enable logs (multiple log frameworks) http://support.stackify.com/hc/en-us/sections/201106055--NET
     X-Create some custom metrics http://support.stackify.com/hc/en-us/articles/205419705-Custom-Metrics-Overview
     X-Logging utilitizing #s. Adding Tags Your Log Messages: http://support.stackify.com/hc/en-us/articles/204719839-Logs-Dashboard
-   
+
     -Utilizing custom profiling  http://support.stackify.com/hc/en-us/articles/205564809-Configuring-Custom-Profiling-for-NET
     X-and tracked functions http://support.stackify.com/hc/en-us/articles/215107746-Using-Tracked-Functions
 *@
@@ -31,6 +31,20 @@
 
 @* Outline what was done to implement each feature, link to docs, code snippets, whatever is needed *@
 <div class="col-md-8 col-md-push-2">
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="title-head centered">
+                <span>Tweet Reader</span>
+                <h4>How it Works</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="divider"></div>
+        </div>
+    </div>
     <div class="panel-group">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -42,9 +56,18 @@
             </div>
             <div id="panel1" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    <p>-Calling Twitter API Linq2Twitter
-                    -Validated through dev.twitter
-                    -My code to call</p>
+                    <p>
+                        Tweets are collected using Twitter API with LinqToTwitter. LinqToTwitter provides access to many parts of the tweet object,
+                        but the Status object was used to look at the text of the actual tweets. Authentication for accessing Twitter API is done through
+                        four keys stored in the Web.config (ConsumerKey, ConsumerSecret, AccessToken, AccessTokenSecret) obtained through the Twitter Developer website.
+                    </p>
+                    <p>
+                        The instantiation of the 'TwitterClass' creates an object that holds all the information and stats for the display on the Page.
+                        The constructor takes two parameters: the Twitter handle and the number of tweets to process. The method 'GetTwitterFeeds' takes the parameters,
+                        calls the API to grab the most recent tweets from the specified user and places them in a list of 'Status' objects.
+                    </p>
+                    <div class="testimoni-author"><a href="https://dev.twitter.com/">Twitter Dev</a> - Sign up and register a site to enable use of APIs</div>
+                    <div class="testimoni-author"><a href="https://github.com/JoeMayo/LinqToTwitter">LinqToTwitter</a> - Github page to reference documentation and learn how to implement into a project</div>
                 </div>
             </div>
         </div>
@@ -60,111 +83,388 @@
             </div>
             <div id="panel2" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <p>-Take text into 'Analyze Tweet' class
-                    -QWERTY class holds values for each character
-                    -Thumb left out</p>
+                    <p>
+                        Once the Tweets have been collected the analysis must occur. A nested class of 'AnalyzeTweet' is used to hold the numbers calculated by the
+                        typing analysis. AnalyzeTweet breaks down each tweet letter by letter to generate the statistics. This process references a 'QWERTY' class to
+                        find where each character is on the keyboard, which finger would normally type it and estimate the distance moved to type each character. QWERTY itself
+                        is a set of char arrays.
+                    </p>
+                    <h5>See the Code:</h5>
+                    <div class="custom-tabs" data-effect-in="flipInX">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active">
+                                <a href="#tab1" data-toggle="tab">TwitterClass</a>
+                            </li>
+                            <li>
+                                <a href="#tab2" data-toggle="tab">AnalyzeTweet</a>
+                            </li>
+                            <li>
+                                <a href="#tab3" data-toggle="tab">QWERTY</a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade" id="tab1">
+                                <h6>TwitterClass(string twitteruser, int numTweets)<i>- This constructor builds the TwitterClass object that will be used to display all the information in the view</i></h6>
+
+                                <pre><code>
+                            List&lt;Status&gt; twitterFeed;
+                            
+                            //Call GetTwitterFeeds using user and number
+                            twitterFeed = GetTwitterFeeds(twitteruser, numTweets);
+
+                            //Count the number of tweets in the list
+                            int tweetcount = 0;
+                            foreach (var tweet in twitterFeed)
+                            {
+                            tweetcount += 1;
+                            }
+
+                            tweetArray = twitterFeed.ToArray();
+
+                            //Generate the Typing Stats
+                            tweetStats = new AnalyzeTweet[tweetcount];
+                            for (int i = 0; i < tweetcount; i++)
+                            {
+                            try
+                            {
+                            var tracer = StackifyLib.ProfileTracer.CreateAsTrackedFunction("Analyze Tweet"); tracer.Exec(() =>
+                            {
+                            tweetStats[i] = new AnalyzeTweet(tweetArray[i].Text.ToString());
+                            });
+                            tweetStats[i].EasyResult();</code></pre>
+                            </div>
+                            <div class="tab-pane fade" id="tab2">
+                                <h6>AnalyzeTweet(string tweet)<i>- Converts the input to a character array and generates typing data</i></h6>
+
+                                <pre><code>
+                foreach (var letter in charInput)
+                {
+                    int _keyRow;
+                    //Determine KeyRow
+                    //to show which rows are more active... 1,2,3,4
+                    if (QWERTY.Row1.Contains(letter.ToString().ToLower()))
+                    {
+                        _keyRow = 1;
+                    }
+                    else if (QWERTY.Row2.Contains(letter.ToString().ToLower()))
+                    {
+                        _keyRow = 2;
+                    }
+                    else if (QWERTY.Row3.Contains(letter.ToString().ToLower()))
+                    {
+                        _keyRow = 3;
+                    }
+                    else if (QWERTY.Row4.Contains(letter.ToString().ToLower()))
+                    {
+                        _keyRow = 4;
+                    }
+                    else
+                    {
+                        logger.Debug("#Key not in row 1-4: " + letter.ToString());
+                        _keyRow = 0;
+                    }
+
+                    string _finger;
+                    //determine the _finger
+                    //If the letter is in the R1,L2... etc
+                    if (QWERTY.R1.Contains(letter.ToString().ToLower()))
+                    {
+                        _finger = "Right Index";
+                    }
+                    else if (QWERTY.R2.Contains(letter.ToString().ToLower()))
+                    {
+                       ...
+                        //IF tree
+                    }
+
+                    //_distance
+
+                    switch (_keyRow)
+                    {
+                        case 0:
+                            keytravel += 0;
+                            break;
+                        case 1:
+                            row1count += 1;
+                            keytravel += 1;
+                            break;
+                        case 2:
+                            row2count += 1;
+                            keytravel += 0;
+                            break;
+                        case 3:
+                            row3count += 1;
+                            keytravel += 1;
+                            break;
+                        case 4:
+                            row4count += 1;
+                            keytravel += 2;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    switch (_finger)
+                    {
+                        case "Right Index":
+                            rindex += 1;
+                            break;
+
+                        case "Right Middle":
+                            rmiddle += 1;
+                            break;
+
+                        case "Right Ring":
+                            rring += 1;
+                            break;
+
+                        case "Right Pinkie":
+                            rpinkie += 1;
+                            break;
+
+                        case "Left Index":
+                            lindex += 1;
+                            break;
+
+                        case "Left Middle":
+                            lmiddle += 1;
+                            break;
+
+                        case "Left Ring":
+                            lring += 1;
+                            break;
+
+                        case "Left Pinkie":
+                            lpinkie += 1;
+                            break;
+
+                        case "Thumb":
+                            rindex += 1;
+                            break;
+
+                        default:
+                            break;
+                    }
+
+
+                    //AddShft
+                    if (QWERTY.AddShft.Contains(letter.ToString().ToLower()))
+                    {
+                        ...
+                        keytravel += 1;
+                    }
+                    //Add1Motion //buttons that are reached for extra
+                    if (QWERTY.Add1Motion.Contains(letter.ToString().ToLower()))
+                    {
+                        ...
+                        keytravel += 1;
+                    }
+                    //Add3Motion //special +3
+                    if (QWERTY.Add3Motion.Contains(letter.ToString().ToLower()))
+                    {
+                        ...
+                        keytravel += 3;
+                    }
+
+                    strokes += 1;
+                }//end foreach  
+
+                //Use letter count for efficiency & key travel
+                efficiency = (double)keytravel / (double)strokes;
+                efficiency = Math.Round(efficiency, 2);</code></pre>
+                            </div>
+                            <div class="tab-pane fade" id="tab3">
+                                <h6>QWERTY<i> - Holds the layout for the standard QWERTY keyboard</i></h6>
+
+                                <pre><code> //rows
+        public static string[] Row1 = { "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "<", ">", "?" };//13
+        public static string[] Row2 = { "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "\'", ":", "\"" };//13
+        public static string[] Row3 = { "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "{", "}", "|" };//16
+        public static string[] Row4 = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "=", "_", "!", "&#64;", "#", "$", "%", "^", "&", "*", "(", ")" };//24
+        public static string[] AddShft = { "<", ">", "?", ":", "\"", "{", "}", "+", "_", "!", "&#64;", "#", "$", "%", "^", "&", "*", "(", ")" };//using shift 19
+        public static string[] Add1Motion = { "g", "h", "\'", "\"", "]", "}", "+", "=", "5", "6", "% ", "^" };//buttons that are reached for extra
+        public static string[] Add3Motion = { "|", "\\" };//special +3
+
+
+
+        //finger
+        public static string[] R4 = { "q", "a", "z" };
+        public static string[] R3 = { "w", "s", "x", "1", "2" };
+        public static string[] R2 = { "e", "d", "c", "3", "!", "&#64;" };
+        public static string[] R1 = { "4", "5", "r", "t", "f", "g", "v", "b", "#", "$", "%" };
+        public static string[] L4 = { "/", ";", "p", "?", ":", "\"", "[", "]", "{", "}", "\'", "|", "\\" };
+
+        public static string[] L3 = { ".", ">", "l", "o", "9", "(", ")", "_", "-", "+", "=", "Backspace" };
+        public static string[] L2 = { ",", "k", "i", "<", "8", "*" };
+        public static string[] L1 = { "^", "&", "y", "u", "j", "h", "n", "m" };</code></pre>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
-    <div class="panel-group">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h6 class="panel-title">
-                    <a data-toggle="collapse" href="#panel3">
-                        Logging
-                    </a>
-                </h6>
-            </div>
-            <div id="panel3" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>-NLog (no code changes to existing logs)
-                    -Stackify direct loggin (examples)
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h6 class="panel-title">
+                <a data-toggle="collapse" href="#panel3">
+                    Logging
+                </a>
+            </h6>
+        </div>
+        <div id="panel3" class="panel-collapse collapse">
+            <div class="panel-body">
+                <h5>
+                    -NLog (no code changes to existing logs)
+                </h5>
+                <code>
+                    //Declare the logger
+                    Logger logger = LogManager.GetCurrentClassLogger();
+                    ...
+                    //Nlog log
+                    logger.Debug("Tweets counted: " + tweetcount);
+                </code>
+                <div class="testimoni-author"><a href="https://stackify.zendesk.com/hc/en-us/articles/205419505">NLog</a> - Support Doc</div>
+                <h5>
+                    -Stackify direct loggin
+                </h5>
+                <code>
+                    StackifyLib.Logger.Queue("Error", "Failed to generate Tweet #Stats");
+                </code>
+                <div class="testimoni-author"><a href="https://github.com/stackify/stackify-api-dotnet#direct-api">No Framework</a> - Github Page</div>
+                <h5>
                     -Nuget Packages
-                    -Support Docs
-                    -Tags and Search</p>
-                </div>
+                </h5>
+                <ul>
+                    <li>StackifyLib</li>
+                    <li>NLog</li>
+                    <li>StackifyLib.Nlog (deprecated)</li>
+                </ul>
+                <h5>
+                    -More Support Docs
+                </h5>
+                <ul>
+                    <li><a href="http://support.stackify.com/hc/en-us/articles/205953405-Supported-Languages-and-Frameworks">Supported Languages and Frameworks</a> </li>
+                    <li><a href="http://support.stackify.com/hc/en-us/articles/205419565-Stackify-API-for-NET">Stackify Direct Support Doc</a> </li>
+                    <li><a href="http://support.stackify.com/hc/en-us/categories/200398739-Errors-Logs">All ELM Docs</a> </li>
+                </ul>
+                <h5>
+                    -Tags and Search
+                </h5>
+                <p>Adding the '#' symbol instantly makes the connected word searchable in the logs!</p>
+                <div class="testimoni-author"><a href="http://support.stackify.com/hc/en-us/articles/204719839-Logs-Dashboard">Log Dashboard</a> - Mentions Tags</div>
+                <div class="testimoni-author"><a href="http://support.stackify.com/hc/en-us/articles/205419495-Filters-and-Fields">Filters and Fields</a> - Searching the logs</div>
+
             </div>
         </div>
     </div>
-    <div class="panel-group">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h6 class="panel-title">
-                    <a data-toggle="collapse" href="#panel4">
-                        Custom Metrics
-                    </a>
-                </h6>
-            </div>
-            <div id="panel4" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>-Types of Metrics doc
-                    -my custom metrics
-                    -how they show in Retrace
-                    -Overview</p>
-                </div>
+</div>
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h6 class="panel-title">
+                <a data-toggle="collapse" href="#panel4">
+                    Custom Metrics
+                </a>
+            </h6>
+        </div>
+        <div id="panel4" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="testimoni-author"><a href="http://support.stackify.com/hc/en-us/articles/205423805-Custom-Application-Metrics-API-for-NET">Custom Metrics</a> - All the different Metrics with descriptions</div>
+                <h5>My Examples</h5>
+                <code>
+                    StackifyLib.Metrics.IncrementGauge("Analyze Tweet", "Add 1 Motion", 1.0);
+                    ...
+                    StackifyLib.Metrics.Count("Analyze Tweet", "Tweets Processed");
+                </code>
             </div>
         </div>
     </div>
-    <div class="panel-group">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h6 class="panel-title">
-                    <a data-toggle="collapse" href="#panel5">
-                        Azure Deployment
-                    </a>
-                </h6>
-            </div>
-            <div id="panel5" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>-GitHub Deployment
-                    -Stackify Site extension
-                    -App Settings
-                    -Docs</p>
-                </div>
+</div>
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h6 class="panel-title">
+                <a data-toggle="collapse" href="#panel5">
+                    Azure Deployment
+                </a>
+            </h6>
+        </div>
+        <div id="panel5" class="panel-collapse collapse">
+            <div class="panel-body">
+                <h5>
+                    A little about the site setup:
+                </h5>
+                <ul>
+                    <li>Hosted in Azure Web Service Instance</li>
+                    <li>Deployed automatically through GitHub deploy</li>
+                    <li>Stackify Webjob functions as Agent on this server</li>
+                    <li>Utilizes Azure SQL database</li>
+                </ul>
+                <div class="testimoni-author"><a href="http://support.stackify.com/hc/en-us/articles/206350463-Install-for-Azure-App-Services-Cloud-Services">Installing for Azure Web Service</a> - How to install the site extension</div>
+                <div class="testimoni-author"><a href="http://support.stackify.com/hc/en-us/articles/209774243-Common-Azure-App-Service-Issues">Troubleshooting</a> - Common issues with Azure deployments</div>
+
             </div>
         </div>
     </div>
-    <div class="panel-group">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h6 class="panel-title">
-                    <a data-toggle="collapse" href="#panel6">
-                        Tracked Functions and Custom Profiling
-                    </a>
-                </h6>
-            </div>
-            <div id="panel6" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>-Link to new documents/blogs
-                    -My Tracked Function
-                    -Limitations of Tracked Functions
-                    
-                    -Custom Profiling of Methods
-                    -"The process is the same for APM+ for Azure App Services, just be sure to include the ProfileClientConfig.txt file in the \bin folder when you deploy your app."</p>
-                </div>
+</div>
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h6 class="panel-title">
+                <a data-toggle="collapse" href="#panel6">
+                    Tracked Functions
+                </a>
+            </h6>
+        </div>
+        <div id="panel6" class="panel-collapse collapse">
+            <div class="panel-body">
+                @*-Link to new documents/blogs*@
+                <div class="testimoni-author"><a href="http://support.stackify.com/hc/en-us/articles/215107746-Using-Tracked-Functions">Tracked Functions</a> - Example code for setting up a Tracked Function</div>
+                <code>
+                    var tracer = StackifyLib.ProfileTracer.CreateAsTrackedFunction("Analyze Tweet"); tracer.Exec(() =>
+                    {
+                    tweetStats[i] = new AnalyzeTweet(tweetArray[i].Text.ToString());
+                    });
+                </code>
+                <div class="testimoni-author"><a href="http://support.stackify.com/hc/en-us/articles/215107746-Using-Tracked-Functions">Custom Profiling</a> - .Net ProfileClientConfig in the /bin folder</div>
+                <code>
+                    [{
+                    "Class": "TweetReader.Data.TwitterClass",
+                    "Method": "*"
+                    }
+                    ]
+                </code>
             </div>
         </div>
     </div>
-    
-    <div class="panel-group">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h6 class="panel-title">
-                    <a data-toggle="collapse" href="#panel8">
-                        Generating Traffic
-                    </a>
-                </h6>
-            </div>
-            <div id="panel8" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>-APM Data needs traffic
-                    -using selenium or whatever</p>
-                </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h6 class="panel-title">
+                <a data-toggle="collapse" href="#panel8">
+                    Generating Traffic
+                </a>
+            </h6>
+        </div>
+        <div id="panel8" class="panel-collapse collapse">
+            <div class="panel-body">
+                <p>
+                    -APM Data needs traffic
+                    -using selenium or whatever
+                </p>
             </div>
         </div>
     </div>
-    <div class="panel-group">
+</div>
+@*<div class="panel-group">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h6 class="panel-title">
@@ -216,7 +516,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>@*end of wrap*@
+    </div>*@
+    </div>@*end of wrap*@
 @section scripts{
 }
