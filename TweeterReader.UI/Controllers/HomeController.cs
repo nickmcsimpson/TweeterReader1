@@ -22,7 +22,7 @@ namespace IdentitySample.Controllers
 
         public ActionResult ThrowErrors()
         {
-            Logger logger = LogManager.GetCurrentClassLogger();
+            Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
             try
             {
@@ -35,7 +35,7 @@ namespace IdentitySample.Controllers
             return View();
         }
         public ActionResult Tweets() {
-            Logger logger = LogManager.GetCurrentClassLogger();
+            Logger logger = NLog.LogManager.GetCurrentClassLogger();
             #region Old Stuff
             //Taking out the viewdata also did nothing to help
             //var tracer = StackifyLib.ProfileTracer.CreateAsTrackedFunction("Tweets Controller"); tracer.Exec(() => { did not help

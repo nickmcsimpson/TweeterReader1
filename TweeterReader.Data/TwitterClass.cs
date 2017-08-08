@@ -1,9 +1,11 @@
 ﻿using LinqToTwitter;
+using log4net;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using TweeterReader.Data;
 
@@ -12,6 +14,8 @@ namespace TweeterReader.Data
     public class TwitterClass
     {
         //TODO: Add DVORAK and AVG Efficiency
+
+        
 
         public AnalyzeTweet[] tweetStats;
         public Status[] tweetArray;
@@ -77,7 +81,7 @@ namespace TweeterReader.Data
         }
 
 
-        private static Logger logger = LogManager.GetCurrentClassLogger();
+        private static Logger logger = NLog.LogManager.GetCurrentClassLogger();
         //Alternative Logger logger = LogManager.GetLogger("MyClassName");
 
         public string tweets;
@@ -192,7 +196,10 @@ namespace TweeterReader.Data
 
         public class AnalyzeTweet
         {
-            private static Logger logger = LogManager.GetCurrentClassLogger();
+            //Log4net
+            private readonly ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+            //Nlog
+            private static Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
             //Row Data variables
             int row1count = 0;
@@ -258,7 +265,7 @@ namespace TweeterReader.Data
                     }
                     else
                     {
-                        logger.Debug("#Key not in row 1-4: " + letter.ToString());
+                        //logger.Debug("#Key not in row 1-4: " + letter.ToString());
                         _keyRow = 0;
                     }
 
@@ -377,6 +384,7 @@ namespace TweeterReader.Data
                             break;
 
                         default:
+                            //Log
                             break;
                     }
 
@@ -391,14 +399,14 @@ namespace TweeterReader.Data
                     //Add1Motion //buttons that are reached for extra
                     if (QWERTY.Add1Motion.Contains(letter.ToString().ToLower()))
                     {
-                        StackifyLib.Logger.Queue("#Extra", "Some of these aren't very close to your finger!");
+                        //StackifyLib.Logger.Queue("#Extra", "Some of these aren't very close to your finger!");
                         StackifyLib.Metrics.IncrementGauge("Analyze Tweet", "Add 1 Motion", 1.0);
                         keytravel += 1;
                     }
                     //Add3Motion //special +3
                     if (QWERTY.Add3Motion.Contains(letter.ToString().ToLower()))
                     {
-                        StackifyLib.Logger.Queue("#Reaching", "Slash and pipes, really?");
+                        StackifyLib.Logger.Queue("Debug", "Slash and pipes were typed");
                         StackifyLib.Metrics.IncrementGauge("Analyze Tweet", "Add 3 Motion", 1.0);
                         keytravel += 3;
                     }
@@ -414,12 +422,17 @@ namespace TweeterReader.Data
 
             public string EasyResult()
             {
+                //Convert to JSON??
+                
+
                 string result = String.Format("After analyzing your typing, I found these results...\nYou typed: {0}" +
                     "\n--------Button presses by row:\n Bottom(1): {1}\n Middle(2): {2}\n Top(3): {3}\n Number(4): {4}" +
                     "\n--------Buttons Pressed by Finger:" +
                     "\n Right Index: {5}\n Right Middle: {6}\n Right Ring: {7}\n Right Pinkie: {8}\n Left Index: {9}\n Left Middle: {10}\n Left Ring: {11}\n Left Pinkie: {12}" +
                     "\n Total Number of Keystrokes: {13}\n Total distance (keys) moved: {14}", input, row1count, row2count, row3count, row4count, rpinkie, rring, rmiddle, rindex, lpinkie, lring, lmiddle, lindex, strokes, keytravel);
-                logger.Debug(result);
+                //logger.Debug(result); //NLog
+                //Log4net
+                this.log.Debug(result);
 
                 return (result);
             }

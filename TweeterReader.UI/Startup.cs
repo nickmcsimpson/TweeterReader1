@@ -1,4 +1,5 @@
 ﻿using Owin;
+using log4net.Config;
 
 namespace IdentitySample
 {
@@ -6,6 +7,7 @@ namespace IdentitySample
     {
         public void Configuration(IAppBuilder app)
         {
+            XmlConfigurator.Configure();
             ConfigureAuth(app);
         }
     }

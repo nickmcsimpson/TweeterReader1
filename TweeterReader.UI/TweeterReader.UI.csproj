@@ -135,10 +135,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="StackifyLib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\StackifyLib.2.0.0-beta2\lib\net451\StackifyLib.dll</HintPath>
+      <HintPath>..\packages\StackifyLib.2.0.0\lib\net451\StackifyLib.dll</HintPath>
     </Reference>
     <Reference Include="StackifyLib.log4net, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\StackifyLib.log4net.2.0.0-beta1\lib\net45\StackifyLib.log4net.dll</HintPath>
+      <HintPath>..\packages\StackifyLib.log4net.2.0.0\lib\net45\StackifyLib.log4net.dll</HintPath>
     </Reference>
     <Reference Include="StackifyLib.nLog, Version=1.19.5995.35852, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\StackifyLib.nLog.1.19.0\lib\StackifyLib.nLog.dll</HintPath>
