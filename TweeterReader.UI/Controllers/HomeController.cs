@@ -105,7 +105,7 @@ namespace IdentitySample.Controllers
 
             try
             {
-            TwitterClass Stackify = new TwitterClass("Stackify", 500);
+            TwitterClass Stackify = new TwitterClass("Stackify", 5);
                 
                 return View(Stackify);
             }
