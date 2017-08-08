@@ -4,6 +4,7 @@ using LinqToTwitter;
 using TweeterReader.Data;
 using NLog;
 using System;
+using Newtonsoft.Json;
 
 namespace IdentitySample.Controllers
 {
@@ -99,9 +100,13 @@ namespace IdentitySample.Controllers
             //    logger.Error(ex, "An Exception was thrown");
             //}
             #endregion
+            //Try to log object as JSON Not here....?
+
+
             try
             {
             TwitterClass Stackify = new TwitterClass("Stackify", 500);
+                
                 return View(Stackify);
             }
             catch (Exception ex)

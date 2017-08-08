@@ -1,5 +1,7 @@
 ﻿using LinqToTwitter;
 using log4net;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -15,7 +17,7 @@ namespace TweeterReader.Data
     {
         //TODO: Add DVORAK and AVG Efficiency
 
-        
+
 
         public AnalyzeTweet[] tweetStats;
         public Status[] tweetArray;
@@ -26,14 +28,14 @@ namespace TweeterReader.Data
             //Call GetTwitterFeeds using user and number
             try
             {
-            twitterFeed = GetTwitterFeeds(twitteruser, numTweets);
+                twitterFeed = GetTwitterFeeds(twitteruser, numTweets);
             }
             catch (Exception)
             {
                 logger.Error("Unable to Call Twitter API");
                 throw;
             }
-           
+
             //call analyze tweet to generate stats use object? can I call to object parts from view?
             int tweetcount = 0;
             foreach (var tweet in twitterFeed)
@@ -56,18 +58,6 @@ namespace TweeterReader.Data
                     {
                         tweetStats[i] = new AnalyzeTweet(tweetArray[i].Text.ToString());
                     });
-                        tweetStats[i].EasyResult();
-                    //tweetStats[i].RPinkie;
-                    //tweetStats[i].RRing;
-                    //tweetStats[i].RMiddle;
-                    //tweetStats[i].RIndex;
-                    //tweetStats[i].LPinkie;
-                    //tweetStats[i].LRing;
-                    //tweetStats[i].LMiddle;
-                    //tweetStats[i].LIndex;
-                    //tweetStats[i].Strokes;
-                    //tweetStats[i].KeyTravel;
-                    //Math.Round(tweetStats[i].Efficiency, 2); Rounding in class
 
                 }
                 catch (Exception)
@@ -77,6 +67,8 @@ namespace TweeterReader.Data
                 }
 
             }
+
+
 
         }
 
@@ -92,7 +84,8 @@ namespace TweeterReader.Data
             tweets = "This is an #example tweet using default #CTOR";
         }
 
-        public async void GetTweets() {
+        public async void GetTweets()
+        {
             var auth = new ApplicationOnlyAuthorizer
             {
                 CredentialStore = new InMemoryCredentialStore()
@@ -104,7 +97,7 @@ namespace TweeterReader.Data
 
             await auth.AuthorizeAsync();
             var twitterCtx = new TwitterContext(auth);
-            
+
             var searchResponse =
                  await
                  (from search in twitterCtx.Search
@@ -122,7 +115,7 @@ namespace TweeterReader.Data
                     Console.WriteLine(
                         "User: {0}, Tweet: {1}",
                         tweet.User.ScreenNameResponse,
-                        tweet.Text));            
+                        tweet.Text));
 
         }//End GetTweet
 
@@ -140,7 +133,7 @@ namespace TweeterReader.Data
                     AccessTokenSecret = ConfigurationManager.AppSettings["accessTokenSecret"]
                 }
             };
-            
+
             var twitterCtx = new TwitterContext(auth);
             var ownTweets = new List<Status>();
 
@@ -160,7 +153,7 @@ namespace TweeterReader.Data
 
             }
             #region Old Do While
-//do  Seems to run endlessly, Don't know if this is necessary. ---Works without this, and much faster.
+            //do  Seems to run endlessly, Don't know if this is necessary. ---Works without this, and much faster.
             //{
             //    int rateLimitStatus = twitterCtx.RateLimitRemaining;
             //    if (rateLimitStatus != 0)
@@ -189,7 +182,7 @@ namespace TweeterReader.Data
             //    }
             //} while (flag);
             #endregion
-            
+
 
             return ownTweets;
         }
@@ -239,7 +232,7 @@ namespace TweeterReader.Data
 
             private void AnalyzeInput(char[] charInput)
             {
-                
+
                 //var tracer = StackifyLib.ProfileTracer.CreateAsTrackedFunction("Analyze Tweet"); tracer.Exec(() =>
                 //{//this didn't work
                 foreach (var letter in charInput)
@@ -423,7 +416,7 @@ namespace TweeterReader.Data
             public string EasyResult()
             {
                 //Convert to JSON??
-                
+                //Not Here
 
                 string result = String.Format("After analyzing your typing, I found these results...\nYou typed: {0}" +
                     "\n--------Button presses by row:\n Bottom(1): {1}\n Middle(2): {2}\n Top(3): {3}\n Number(4): {4}" +
@@ -478,6 +471,13 @@ namespace TweeterReader.Data
                 get { return efficiency; }
                 set { efficiency = value; }
             }
+        }
+
+        public void JSONLogger()
+        {
+            dynamic jsonObject = new JObject(this);
+
+            logger.Debug(jsonObject);
         }
 
         public string Tweets
