@@ -456,8 +456,15 @@
         <div id="panel8" class="panel-collapse collapse">
             <div class="panel-body">
                 <p>
-                    -APM Data needs traffic
-                    -using selenium or whatever
+                    To generate APM data, logs, Custom Metrics and other data in this application, traffic must be generated to the website. To simulate traffic I have used a program called Selenium.
+
+                    Here is a great video on setting this up: <a href="https://www.youtube.com/watch?v=2SzdhH8xAX4">Selenium Video</a>
+                </p>
+                <p>
+                    For my application I wanted to keep the program running constantly so I used an AWS virtual machine that I am able to remote into.
+
+                    I chose to use the Selenium Webdriver which is used in Firefox as an add-on. I was able to 'Record' a path through the site and Selenium read the path based on inputs and tags on the page to generate a script that can be run automatically. This script can be set to run every five minutes and it will input forms, login and navigate throughout the site like user might.
+
                 </p>
             </div>
         </div>
